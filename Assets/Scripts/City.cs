@@ -5,6 +5,12 @@ using TMPro;
 
 public class City : MonoBehaviour
 {
+    [Header("Day")]
+    public GameObject sun;
+    public float curDayTime;
+    public float dayTime;
+
+    [Header("Stats")]
     public int money;
     public int day;
     public int curPopulation;
@@ -28,6 +34,22 @@ public class City : MonoBehaviour
     private void Start()
     {
         UpdateStatsText();
+    }
+
+    private void FixedUpdate()
+    {
+        DayCicle();
+    }
+
+    private void DayCicle()
+    {
+        curDayTime += Time.deltaTime;
+        if (curDayTime >= dayTime)
+        {
+            curDayTime = 0;
+            EndTurn();
+        }
+        sun.transform.rotation = Quaternion.Euler((curDayTime / dayTime) * 360, 0f, 0f);
     }
 
     // Called when we place down a bulding
