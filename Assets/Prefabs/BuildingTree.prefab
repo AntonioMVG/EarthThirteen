@@ -94,8 +94,8 @@ GameObject:
   - component: {fileID: 1971416297993961170}
   - component: {fileID: 2455272856931565284}
   m_Layer: 0
-  m_Name: BuildingTrees
-  m_TagString: Trees
+  m_Name: BuildingTree
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BuildingPlacement : MonoBehaviour
@@ -13,6 +14,7 @@ public class BuildingPlacement : MonoBehaviour
     private float lastUpdateTime;
     private Vector3 curIndicatorPos;
 
+    [Header("Placements")]
     public GameObject placementIndicator;
     public GameObject bulldozerIndicator;
     public GameObject placementHouse;
@@ -28,46 +30,44 @@ public class BuildingPlacement : MonoBehaviour
 
         currentlyPlacing = true;
         curBuildingPreset = preset;
-        //placementIndicator.SetActive(true);
-        if (preset.prefab.name == "BuildingHouse")
+
+        switch (preset.prefab.name)
         {
-            placementHouse.SetActive(true);
-            placementFactory.SetActive(false);
-            placementFarm.SetActive(false);
-            placementRoad.SetActive(false);
-            placementTree.SetActive(false);
-        }
-        else if (preset.prefab.name == "BuildingFactory")
-        {
-            placementHouse.SetActive(false);
-            placementFactory.SetActive(true);
-            placementFarm.SetActive(false);
-            placementRoad.SetActive(false);
-            placementTree.SetActive(false);
-        }
-        else if (preset.prefab.name == "BuildingFarm")
-        {
-            placementHouse.SetActive(false);
-            placementFactory.SetActive(false);
-            placementFarm.SetActive(true);
-            placementRoad.SetActive(false);
-            placementTree.SetActive(false);
-        }
-        else if (preset.prefab.name == "BuildingRoad")
-        {
-            placementHouse.SetActive(false);
-            placementFactory.SetActive(false);
-            placementFarm.SetActive(false);
-            placementRoad.SetActive(true);
-            placementTree.SetActive(false);
-        }
-        else if (preset.prefab.name == "BuildingTrees")
-        {
-            placementHouse.SetActive(false);
-            placementFactory.SetActive(false);
-            placementFarm.SetActive(false);
-            placementRoad.SetActive(false);
-            placementTree.SetActive(true);
+            case "BuildingHouse":
+                placementHouse.SetActive(true);
+                placementFactory.SetActive(false);
+                placementFarm.SetActive(false);
+                placementRoad.SetActive(false);
+                placementTree.SetActive(false);
+                break;
+            case "BuildingFactory":
+                placementHouse.SetActive(false);
+                placementFactory.SetActive(true);
+                placementFarm.SetActive(false);
+                placementRoad.SetActive(false);
+                placementTree.SetActive(false);
+                break;
+            case "BuildingFarm":
+                placementHouse.SetActive(false);
+                placementFactory.SetActive(false);
+                placementFarm.SetActive(true);
+                placementRoad.SetActive(false);
+                placementTree.SetActive(false);
+                break;
+            case "BuildingRoad":
+                placementHouse.SetActive(false);
+                placementFactory.SetActive(false);
+                placementFarm.SetActive(false);
+                placementRoad.SetActive(true);
+                placementTree.SetActive(false);
+                break;
+            case "BuildingTree":
+                placementHouse.SetActive(false);
+                placementFactory.SetActive(false);
+                placementFarm.SetActive(false);
+                placementRoad.SetActive(false);
+                placementTree.SetActive(true);
+                break;
         }
     }
 
@@ -76,12 +76,12 @@ public class BuildingPlacement : MonoBehaviour
     {
         currentlyPlacing = false;
         currentlyBulldozering = false;
-        //placementIndicator.SetActive(false);
         placementHouse.SetActive(false);
         placementFactory.SetActive(false);
         placementFarm.SetActive(false);
         placementRoad.SetActive(false);
         placementTree.SetActive(false);
+        bulldozerIndicator.SetActive(false);
     }
 
     // Turn Bulldozer on/off
@@ -93,8 +93,11 @@ public class BuildingPlacement : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+            placementIndicator.transform.Rotate(0, 90, 0);
+
         // Cancel building placement
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
             CancelBuildingPlacement();
 
         // Called every 0.05 seconds
@@ -122,11 +125,11 @@ public class BuildingPlacement : MonoBehaviour
     // Places down the currently selected building
     private void PlaceBuilding()
     {
-        GameObject buildingObj = Instantiate(curBuildingPreset.prefab, curIndicatorPos, Quaternion.identity);
+        GameObject buildingObj = Instantiate(curBuildingPreset.prefab, curIndicatorPos, placementIndicator.transform.rotation);
 
         City.instance.OnPlaceBulding(buildingObj.GetComponent<Building>());
 
-        if (!curBuildingPreset.prefab.tag.Equals("Road") && !curBuildingPreset.prefab.tag.Equals("Trees"))
+        //if (!curBuildingPreset.prefab.tag.Equals("Road") && !curBuildingPreset.prefab.tag.Equals("Tree"))
             CancelBuildingPlacement();
     }
 

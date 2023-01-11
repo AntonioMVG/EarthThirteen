@@ -4,8 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - House
+  - Factory
+  - Farm
   - Road
-  - Trees
+  - Tree
   layers:
   - Default
   - TransparentFX

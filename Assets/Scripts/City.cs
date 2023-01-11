@@ -11,8 +11,8 @@ public class City : MonoBehaviour
     public float dayTime;
 
     [Header("Stats")]
-    public int money;
     public int day;
+    public int money;
     public int curPopulation;
     public int curJobs;
     public int curFood;
@@ -20,9 +20,21 @@ public class City : MonoBehaviour
     public int maxJobs;
     public int incomePerJobs;
 
-    public TextMeshProUGUI statsText;
+    [Header("GUI")]
+    public TextMeshProUGUI dayTxt;
+    public TextMeshProUGUI moneyTxt;
+    public TextMeshProUGUI populationTxt;
+    public TextMeshProUGUI jobsTxt;
+    public TextMeshProUGUI foodTxt;
 
     public List<Building> buildings = new List<Building>();
+
+    [Header("Buildings Container")]
+    public GameObject housesContainer;
+    public GameObject factoriesContainer;
+    public GameObject farmsContainer;
+    public GameObject roadsContainer;
+    public GameObject treesContainer;
 
     public static City instance;
 
@@ -49,13 +61,36 @@ public class City : MonoBehaviour
             curDayTime = 0;
             EndTurn();
         }
+
+        // Rotate the Light with the current day time / day time multiplied with 360 degrees
         sun.transform.rotation = Quaternion.Euler((curDayTime / dayTime) * 360, 0f, 0f);
+
+        // Move the Skybox with the current time
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * curDayTime / 60);
     }
 
     // Called when we place down a bulding
     public void OnPlaceBulding(Building building)
     {
         buildings.Add(building);
+        switch (building.tag)
+        {
+            case "House":
+                building.transform.SetParent(housesContainer.transform);
+                break;
+            case "Factory":
+                building.transform.SetParent(factoriesContainer.transform);
+                break;
+            case "Farm":
+                building.transform.SetParent(farmsContainer.transform);
+                break;
+            case "Road":
+                building.transform.SetParent(roadsContainer.transform);
+                break;
+            case "Tree":
+                building.transform.SetParent(treesContainer.transform);
+                break;
+        }
 
         money -= building.preset.cost;
         maxPopulation += building.preset.population;
@@ -84,7 +119,6 @@ public class City : MonoBehaviour
         CalculatePopulation();
         CalculateJobs();
         CalculateFood();
-
         UpdateStatsText();
     }
 
@@ -122,7 +156,10 @@ public class City : MonoBehaviour
 
     private void UpdateStatsText()
     {
-        statsText.text = string.Format("Day: {0} Money: {1} Pop;{2}/{3} Jobs: {4}/{5} Food: {6} ",
-            new object[7] { day, money, curPopulation, maxPopulation, curJobs, maxJobs, curFood });
+        dayTxt.text = day.ToString();
+        moneyTxt.text = money.ToString();
+        populationTxt.text = curPopulation.ToString();
+        jobsTxt.text = curJobs.ToString();
+        foodTxt.text = curFood.ToString();
     }
 }
