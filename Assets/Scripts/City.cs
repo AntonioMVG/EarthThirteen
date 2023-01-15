@@ -66,7 +66,7 @@ public class City : MonoBehaviour
         sun.transform.rotation = Quaternion.Euler((curDayTime / dayTime) * 360, 0f, 0f);
 
         // Move the Skybox with the current time
-        RenderSettings.skybox.SetFloat("_Rotation", Time.time * curDayTime / 60);
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * dayTime / 60);
     }
 
     // Called when we place down a bulding
@@ -158,8 +158,8 @@ public class City : MonoBehaviour
     {
         dayTxt.text = day.ToString();
         moneyTxt.text = money.ToString();
-        populationTxt.text = curPopulation.ToString();
-        jobsTxt.text = curJobs.ToString();
+        populationTxt.text = curPopulation.ToString() + "/" + maxPopulation.ToString();
+        jobsTxt.text = curJobs.ToString() + "/" + maxJobs.ToString(); ;
         foodTxt.text = curFood.ToString();
     }
 }
