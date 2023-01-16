@@ -24,6 +24,10 @@ public class BuildingPlacement : MonoBehaviour
     public GameObject placementRoad;
     public GameObject placementTree;
 
+    [Header("Particles")]
+    public GameObject dustParticle;
+    public GameObject explosionParticle;
+
     // Called when we press a building UI button
     public void BeginNewBuildingPlacement(BuildingPreset preset)
     {
@@ -117,29 +121,35 @@ public class BuildingPlacement : MonoBehaviour
         }
 
         // Called when we press left mouse button
+        Vector3 dummyPos = new Vector3(0, -99, 9);
         if (Input.GetMouseButtonDown(0) && currentlyPlacing)
-            PlaceBuilding();
-        // TODO: Añadir particula de polvo al caer el edificio
-            
+        {
+            // If pressing the HUD when have a building to place, prevents being sent to the Dummy position
+            if (placementIndicator.transform.position != dummyPos)
+            {
+                placementIndicator.GetComponent<AudioSource>().Play();
+                GameObject particles = Instantiate(dustParticle, placementIndicator.transform.position, Quaternion.identity);
+                Destroy(particles, 1f);
+                PlaceBuilding();
+            }
+        }
         else if (Input.GetMouseButtonDown(0) && currentlyBulldozering)
+        {
+            bulldozerIndicator.GetComponent<AudioSource>().Play();
+            GameObject particles = Instantiate(explosionParticle, bulldozerIndicator.transform.position, Quaternion.identity);
+            Destroy(particles, 1f);
             Bulldoze();
-        // TODO: Añadir particula de polvo al borrar el edificio
+        }
     }
 
     // Places down the currently selected building
     private void PlaceBuilding()
     {
         GameObject buildingObj = Instantiate(curBuildingPreset.prefab, curIndicatorPos, placementIndicator.transform.rotation);
-
-        // If pressing the HUD when have a building to place, prevents being sent to the Dummy position
-        Vector3 dummyPos = new Vector3(0, -99, 9);
-        if (buildingObj.transform.position == dummyPos)
-            Destroy(buildingObj);
-        else
-            City.instance.OnPlaceBulding(buildingObj.GetComponent<Building>());
-
-        //if (!curBuildingPreset.prefab.tag.Equals("Road") && !curBuildingPreset.prefab.tag.Equals("Tree"))
-            CancelBuildingPlacement();
+        
+        City.instance.OnPlaceBulding(buildingObj.GetComponent<Building>());
+        
+        CancelBuildingPlacement();
     }
 
     // Delete the currently selected building
