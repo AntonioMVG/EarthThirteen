@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingPlacement : MonoBehaviour
 {
@@ -118,8 +119,11 @@ public class BuildingPlacement : MonoBehaviour
         // Called when we press left mouse button
         if (Input.GetMouseButtonDown(0) && currentlyPlacing)
             PlaceBuilding();
+        // TODO: Añadir particula de polvo al caer el edificio
+            
         else if (Input.GetMouseButtonDown(0) && currentlyBulldozering)
             Bulldoze();
+        // TODO: Añadir particula de polvo al borrar el edificio
     }
 
     // Places down the currently selected building
@@ -127,7 +131,12 @@ public class BuildingPlacement : MonoBehaviour
     {
         GameObject buildingObj = Instantiate(curBuildingPreset.prefab, curIndicatorPos, placementIndicator.transform.rotation);
 
-        City.instance.OnPlaceBulding(buildingObj.GetComponent<Building>());
+        // If pressing the HUD when have a building to place, prevents being sent to the Dummy position
+        Vector3 dummyPos = new Vector3(0, -99, 9);
+        if (buildingObj.transform.position == dummyPos)
+            Destroy(buildingObj);
+        else
+            City.instance.OnPlaceBulding(buildingObj.GetComponent<Building>());
 
         //if (!curBuildingPreset.prefab.tag.Equals("Road") && !curBuildingPreset.prefab.tag.Equals("Tree"))
             CancelBuildingPlacement();
@@ -140,5 +149,15 @@ public class BuildingPlacement : MonoBehaviour
 
         if (buildingToDestroy != null)
             City.instance.OnRemoveBuilding(buildingToDestroy);
+    }
+
+    private void ShowBuildingInfo()
+    {
+        string buildingNameInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.name.ToString();
+        string buildingCostInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.cost.ToString();
+        string buildingCostPerTurnInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.costPerTurn.ToString();
+        string buildingPopulationInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.population.ToString();
+        string buildingJobsInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.jobs.ToString();
+        string buildingFoodInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.food.ToString();
     }
 }

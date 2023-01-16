@@ -9,6 +9,7 @@ public class City : MonoBehaviour
     public GameObject sun;
     public float curDayTime;
     public float dayTime;
+    public float multiplier;
 
     [Header("Stats")]
     public int day;
@@ -20,7 +21,7 @@ public class City : MonoBehaviour
     public int maxJobs;
     public int incomePerJobs;
 
-    [Header("GUI")]
+    [Header("HUD")]
     public TextMeshProUGUI dayTxt;
     public TextMeshProUGUI moneyTxt;
     public TextMeshProUGUI populationTxt;
@@ -55,7 +56,7 @@ public class City : MonoBehaviour
 
     private void DayCicle()
     {
-        curDayTime += Time.deltaTime;
+        curDayTime += Time.deltaTime * multiplier;
         if (curDayTime >= dayTime)
         {
             curDayTime = 0;
@@ -66,13 +67,14 @@ public class City : MonoBehaviour
         sun.transform.rotation = Quaternion.Euler((curDayTime / dayTime) * 360, 0f, 0f);
 
         // Move the Skybox with the current time
-        RenderSettings.skybox.SetFloat("_Rotation", Time.time * dayTime / 60);
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * multiplier);
     }
 
     // Called when we place down a bulding
     public void OnPlaceBulding(Building building)
     {
         buildings.Add(building);
+
         switch (building.tag)
         {
             case "House":
@@ -159,7 +161,17 @@ public class City : MonoBehaviour
         dayTxt.text = day.ToString();
         moneyTxt.text = money.ToString();
         populationTxt.text = curPopulation.ToString() + "/" + maxPopulation.ToString();
-        jobsTxt.text = curJobs.ToString() + "/" + maxJobs.ToString(); ;
+        jobsTxt.text = curJobs.ToString() + "/" + maxJobs.ToString();
         foodTxt.text = curFood.ToString();
+    }
+
+    public void DayAvanced()
+    {
+        multiplier *= 2;
+    }
+
+    public void DaySlow()
+    {
+        multiplier /= 2;
     }
 }
