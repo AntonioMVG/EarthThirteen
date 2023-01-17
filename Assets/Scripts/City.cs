@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Threading;
 
 public class City : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class City : MonoBehaviour
     public float curDayTime;
     public float dayTime;
     public float multiplier;
+    private string hourTime;
 
     [Header("Stats")]
     public int day;
@@ -27,6 +29,8 @@ public class City : MonoBehaviour
     public TextMeshProUGUI populationTxt;
     public TextMeshProUGUI jobsTxt;
     public TextMeshProUGUI foodTxt;
+    public TextMeshProUGUI hourTxt;
+    public TextMeshProUGUI multiplierTxt;
 
     public List<Building> buildings = new List<Building>();
 
@@ -46,17 +50,24 @@ public class City : MonoBehaviour
 
     private void Start()
     {
-        UpdateStatsText();
+        
     }
 
     private void FixedUpdate()
     {
+        UpdateStatsText();
         DayCicle();
     }
 
     private void DayCicle()
     {
         curDayTime += Time.deltaTime * multiplier;
+
+        int minutes = (int)curDayTime / 60;
+        int seconds = (int)curDayTime % 60;
+
+        hourTime = (minutes.ToString("00") + ":" + seconds.ToString("00"));
+
         if (curDayTime >= dayTime)
         {
             curDayTime = 0;
@@ -163,6 +174,9 @@ public class City : MonoBehaviour
         populationTxt.text = curPopulation.ToString() + "/" + maxPopulation.ToString();
         jobsTxt.text = curJobs.ToString() + "/" + maxJobs.ToString();
         foodTxt.text = curFood.ToString();
+        //hourTxt.text = curDayTime.ToString("00:00");
+        hourTxt.text = hourTime;
+        multiplierTxt.text = "x" + multiplier.ToString();
     }
 
     public void DayAvanced()
