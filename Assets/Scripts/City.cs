@@ -48,11 +48,6 @@ public class City : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         UpdateStatsText();
@@ -63,10 +58,10 @@ public class City : MonoBehaviour
     {
         curDayTime += Time.deltaTime * multiplier;
 
-        int minutes = (int)curDayTime / 60;
-        int seconds = (int)curDayTime % 60;
+        int hours = (int)curDayTime / 60;
+        int minutes = (int)curDayTime % 60;
 
-        hourTime = (minutes.ToString("00") + ":" + seconds.ToString("00"));
+        hourTime = (hours.ToString("00") + ":" + minutes.ToString("00"));
 
         if (curDayTime >= dayTime)
         {
