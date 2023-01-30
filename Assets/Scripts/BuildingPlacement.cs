@@ -58,6 +58,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
                 placementTree.SetActive(false);
+                buildingInfo.SetActive(false);
                 break;
             case "HouseAMVG":
                 placementHouse.SetActive(false);
@@ -66,6 +67,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
                 placementTree.SetActive(false);
+                buildingInfo.SetActive(false);
                 break;
             case "BuildingFactory":
                 placementHouse.SetActive(false);
@@ -74,6 +76,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
                 placementTree.SetActive(false);
+                buildingInfo.SetActive(false);
                 break;
             case "BuildingFarm":
                 placementHouse.SetActive(false);
@@ -82,6 +85,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(true);
                 placementRoad.SetActive(false);
                 placementTree.SetActive(false);
+                buildingInfo.SetActive(false);
                 break;
             case "BuildingRoad":
                 placementHouse.SetActive(false);
@@ -89,6 +93,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(true);
                 placementTree.SetActive(false);
+                buildingInfo.SetActive(false);
                 break;
             case "BuildingTree":
                 placementHouse.SetActive(false);
@@ -97,6 +102,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
                 placementTree.SetActive(true);
+                buildingInfo.SetActive(false);
                 break;
         }
     }
@@ -202,5 +208,10 @@ public class BuildingPlacement : MonoBehaviour
         jobsInfo.text = building.preset.jobs.ToString();
         foodInfo.text = building.preset.food.ToString();
         populationInfo.text = building.preset.polution.ToString();
+    }
+
+    public void CloseTab()
+    {
+        buildingInfo.SetActive(false);
     }
 }
