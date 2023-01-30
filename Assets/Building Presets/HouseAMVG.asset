@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c674ad6dc6761b46bb5a118b2c4049f, type: 3}
-  m_Name: Farm
+  m_Name: HouseAMVG
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 15
   costPerTurn: 5
-  prefab: {fileID: 3195860665983451072, guid: d9598891037c79a408495ba4bb64c982, type: 3}
-  population: 0
-  jobs: 3
-  food: 20
-  polution: -1
+  prefab: {fileID: 5929470680739332414, guid: 4754c6585ddd70c42a7098f7d9d5f981, type: 3}
+  population: 10
+  jobs: 0
+  food: -5

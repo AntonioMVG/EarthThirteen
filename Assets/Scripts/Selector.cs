@@ -45,4 +45,17 @@ public class Selector : MonoBehaviour
 
         return new Vector3(0, -99, 9);
     }
+
+    public Building GetBuildingInfo()
+    {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray, out hit))
+        {
+            return hit.collider.gameObject.GetComponent<Building>();
+        }
+
+        return null;
+    }
 }

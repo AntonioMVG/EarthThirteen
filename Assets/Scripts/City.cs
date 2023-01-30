@@ -19,6 +19,8 @@ public class City : MonoBehaviour
     public int curPopulation;
     public int curJobs;
     public int curFood;
+    public int treesCounter;
+    public int polution;
     public int maxPopulation;
     public int maxJobs;
     public int incomePerJobs;
@@ -29,6 +31,7 @@ public class City : MonoBehaviour
     public TextMeshProUGUI populationTxt;
     public TextMeshProUGUI jobsTxt;
     public TextMeshProUGUI foodTxt;
+    public TextMeshProUGUI polutionTxt;
     public TextMeshProUGUI hourTxt;
     public TextMeshProUGUI multiplierTxt;
 
@@ -86,6 +89,9 @@ public class City : MonoBehaviour
             case "House":
                 building.transform.SetParent(housesContainer.transform);
                 break;
+            case "HouseAMVG":
+                building.transform.SetParent(housesContainer.transform);
+                break;
             case "Factory":
                 building.transform.SetParent(factoriesContainer.transform);
                 break;
@@ -97,10 +103,12 @@ public class City : MonoBehaviour
                 break;
             case "Tree":
                 building.transform.SetParent(treesContainer.transform);
+                treesCounter++;
                 break;
         }
 
         money -= building.preset.cost;
+        polution += building.preset.polution;
         maxPopulation += building.preset.population;
         maxJobs += building.preset.jobs;
 
@@ -127,6 +135,7 @@ public class City : MonoBehaviour
         CalculatePopulation();
         CalculateJobs();
         CalculateFood();
+        CalculatePolution();
         UpdateStatsText();
     }
 
@@ -162,6 +171,13 @@ public class City : MonoBehaviour
             curFood += building.preset.food;
     }
 
+    private void CalculatePolution()
+    {
+        polution = 0;
+        foreach (Building building in buildings)
+            polution += building.preset.polution;
+    }
+
     private void UpdateStatsText()
     {
         dayTxt.text = day.ToString();
@@ -169,7 +185,7 @@ public class City : MonoBehaviour
         populationTxt.text = curPopulation.ToString() + "/" + maxPopulation.ToString();
         jobsTxt.text = curJobs.ToString() + "/" + maxJobs.ToString();
         foodTxt.text = curFood.ToString();
-        //hourTxt.text = curDayTime.ToString("00:00");
+        polutionTxt.text = polution.ToString();
         hourTxt.text = hourTime;
         multiplierTxt.text = "x" + multiplier.ToString();
     }

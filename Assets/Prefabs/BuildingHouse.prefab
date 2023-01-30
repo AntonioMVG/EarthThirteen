@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5583656444732363629}
   - component: {fileID: 5583656444732363634}
+  - component: {fileID: 6080850641497355286}
   m_Layer: 0
   m_Name: BuildingHouse
   m_TagString: House
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preset: {fileID: 11400000, guid: 47e48cbee5185d84482e74e11f4f0224, type: 2}
+--- !u!65 &6080850641497355286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5583656444732363628}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.9165515, z: 1}
+  m_Center: {x: 0, y: 0.44808197, z: 0}
 --- !u!1001 &5583656443907299807
 PrefabInstance:
   m_ObjectHideFlags: 0

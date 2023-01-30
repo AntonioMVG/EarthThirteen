@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1971416297993961170}
   - component: {fileID: 2455272856931565284}
+  - component: {fileID: 5457997790468195047}
   m_Layer: 0
   m_Name: BuildingTree
   m_TagString: Tree
@@ -129,3 +130,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preset: {fileID: 11400000, guid: e27453bf24f7ed047b0f02a07226eea5, type: 2}
+--- !u!65 &5457997790468195047
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8023037909794250716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1381693, y: 4.2966123, z: 2.4140282}
+  m_Center: {x: 0.012836933, y: 2.0676324, z: -0.09992123}

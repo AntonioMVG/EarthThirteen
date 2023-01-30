@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1971416297993961170}
   - component: {fileID: 4696980286732540137}
+  - component: {fileID: 1167451684788565858}
   m_Layer: 0
   m_Name: BuildingRoad
   m_TagString: Road
@@ -144,3 +145,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preset: {fileID: 11400000, guid: 0a94a5ac898a0b24ba902d5e803a6833, type: 2}
+--- !u!65 &1167451684788565858
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8023037909794250716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5467849, z: 1}
+  m_Center: {x: 0, y: 0.22660756, z: 0}

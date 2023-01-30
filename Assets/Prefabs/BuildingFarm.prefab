@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3195860665983451073}
   - component: {fileID: 8403951280052768163}
+  - component: {fileID: -4534300232806540552}
   m_Layer: 0
   m_Name: BuildingFarm
   m_TagString: Farm
@@ -46,6 +47,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preset: {fileID: 11400000, guid: 099f8e613d8cb5445844e703b1ec9ad9, type: 2}
+--- !u!65 &-4534300232806540552
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3195860665983451072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.74602646, z: 1}
+  m_Center: {x: 0, y: 0.35193482, z: 0}
 --- !u!1001 &3195860665312032426
 PrefabInstance:
   m_ObjectHideFlags: 0

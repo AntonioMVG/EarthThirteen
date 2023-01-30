@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BuildingPlacement : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class BuildingPlacement : MonoBehaviour
     public GameObject placementIndicator;
     public GameObject bulldozerIndicator;
     public GameObject placementHouse;
+    public GameObject placementHouseAMVG;
     public GameObject placementFactory;
     public GameObject placementFarm;
     public GameObject placementRoad;
@@ -27,6 +29,17 @@ public class BuildingPlacement : MonoBehaviour
     [Header("Particles")]
     public GameObject dustParticle;
     public GameObject explosionParticle;
+
+    [Header("Building Info")]
+    public GameObject buildingInfo;
+    public TextMeshProUGUI nameInfo;
+    public TextMeshProUGUI costInfo;
+    public TextMeshProUGUI costPerTurnInfo;
+    public TextMeshProUGUI populationInfo;
+    public TextMeshProUGUI jobsInfo;
+    public TextMeshProUGUI foodInfo;
+    public TextMeshProUGUI polutionInfo;
+
 
     // Called when we press a building UI button
     public void BeginNewBuildingPlacement(BuildingPreset preset)
@@ -40,6 +53,15 @@ public class BuildingPlacement : MonoBehaviour
         {
             case "BuildingHouse":
                 placementHouse.SetActive(true);
+                placementHouseAMVG.SetActive(false);
+                placementFactory.SetActive(false);
+                placementFarm.SetActive(false);
+                placementRoad.SetActive(false);
+                placementTree.SetActive(false);
+                break;
+            case "HouseAMVG":
+                placementHouse.SetActive(false);
+                placementHouseAMVG.SetActive(true);
                 placementFactory.SetActive(false);
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
@@ -47,6 +69,7 @@ public class BuildingPlacement : MonoBehaviour
                 break;
             case "BuildingFactory":
                 placementHouse.SetActive(false);
+                placementHouseAMVG.SetActive(false);
                 placementFactory.SetActive(true);
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
@@ -54,6 +77,7 @@ public class BuildingPlacement : MonoBehaviour
                 break;
             case "BuildingFarm":
                 placementHouse.SetActive(false);
+                placementHouseAMVG.SetActive(false);
                 placementFactory.SetActive(false);
                 placementFarm.SetActive(true);
                 placementRoad.SetActive(false);
@@ -68,6 +92,7 @@ public class BuildingPlacement : MonoBehaviour
                 break;
             case "BuildingTree":
                 placementHouse.SetActive(false);
+                placementHouseAMVG.SetActive(false);
                 placementFactory.SetActive(false);
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
@@ -82,11 +107,13 @@ public class BuildingPlacement : MonoBehaviour
         currentlyPlacing = false;
         currentlyBulldozering = false;
         placementHouse.SetActive(false);
+        placementHouseAMVG.SetActive(false);
         placementFactory.SetActive(false);
         placementFarm.SetActive(false);
         placementRoad.SetActive(false);
         placementTree.SetActive(false);
         bulldozerIndicator.SetActive(false);
+        buildingInfo.SetActive(false);
     }
 
     // Turn Bulldozer on/off
@@ -140,6 +167,11 @@ public class BuildingPlacement : MonoBehaviour
             Destroy(particles, 1f);
             Bulldoze();
         }
+        else if (Input.GetMouseButtonDown(0) && curIndicatorPos != dummyPos)
+        {
+            buildingInfo.SetActive(true);
+            ShowBuildingInfo(Selector.instance.GetBuildingInfo());
+        }
     }
 
     // Places down the currently selected building
@@ -161,13 +193,14 @@ public class BuildingPlacement : MonoBehaviour
             City.instance.OnRemoveBuilding(buildingToDestroy);
     }
 
-    private void ShowBuildingInfo()
+    public void ShowBuildingInfo(Building building)
     {
-        string buildingNameInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.name.ToString();
-        string buildingCostInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.cost.ToString();
-        string buildingCostPerTurnInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.costPerTurn.ToString();
-        string buildingPopulationInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.population.ToString();
-        string buildingJobsInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.jobs.ToString();
-        string buildingFoodInfo = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos).preset.food.ToString();
+        nameInfo.text = building.preset.name.ToString();
+        costInfo.text = building.preset.cost.ToString();
+        costPerTurnInfo.text = building.preset.costPerTurn.ToString();
+        populationInfo.text = building.preset.population.ToString();
+        jobsInfo.text = building.preset.jobs.ToString();
+        foodInfo.text = building.preset.food.ToString();
+        populationInfo.text = building.preset.polution.ToString();
     }
 }

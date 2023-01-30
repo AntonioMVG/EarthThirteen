@@ -9,6 +9,7 @@ TagManager:
   - Farm
   - Road
   - Tree
+  - HouseAMVG
   layers:
   - Default
   - TransparentFX
