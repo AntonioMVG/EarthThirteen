@@ -25,6 +25,7 @@ public class BuildingPlacement : MonoBehaviour
     public GameObject placementFarm;
     public GameObject placementRoad;
     public GameObject placementTree;
+    public GameObject placementPipe;
 
     [Header("Particles")]
     public GameObject dustParticle;
@@ -58,6 +59,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
                 placementTree.SetActive(false);
+                placementPipe.SetActive(false);
                 buildingInfo.SetActive(false);
                 break;
             case "HouseAMVG":
@@ -67,6 +69,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
                 placementTree.SetActive(false);
+                placementPipe.SetActive(false);
                 buildingInfo.SetActive(false);
                 break;
             case "BuildingFactory":
@@ -76,6 +79,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
                 placementTree.SetActive(false);
+                placementPipe.SetActive(false);
                 buildingInfo.SetActive(false);
                 break;
             case "BuildingFarm":
@@ -85,6 +89,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(true);
                 placementRoad.SetActive(false);
                 placementTree.SetActive(false);
+                placementPipe.SetActive(false);
                 buildingInfo.SetActive(false);
                 break;
             case "BuildingRoad":
@@ -93,6 +98,7 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(true);
                 placementTree.SetActive(false);
+                placementPipe.SetActive(false);
                 buildingInfo.SetActive(false);
                 break;
             case "BuildingTree":
@@ -102,6 +108,17 @@ public class BuildingPlacement : MonoBehaviour
                 placementFarm.SetActive(false);
                 placementRoad.SetActive(false);
                 placementTree.SetActive(true);
+                placementPipe.SetActive(false);
+                buildingInfo.SetActive(false);
+                break;
+            case "BuildingPipe":
+                placementHouse.SetActive(false);
+                placementHouseAMVG.SetActive(false);
+                placementFactory.SetActive(false);
+                placementFarm.SetActive(false);
+                placementRoad.SetActive(false);
+                placementTree.SetActive(false);
+                placementPipe.SetActive(true);
                 buildingInfo.SetActive(false);
                 break;
         }
@@ -118,6 +135,7 @@ public class BuildingPlacement : MonoBehaviour
         placementFarm.SetActive(false);
         placementRoad.SetActive(false);
         placementTree.SetActive(false);
+        placementPipe.SetActive(false);
         bulldozerIndicator.SetActive(false);
         buildingInfo.SetActive(false);
     }
@@ -201,13 +219,13 @@ public class BuildingPlacement : MonoBehaviour
 
     public void ShowBuildingInfo(Building building)
     {
-        nameInfo.text = building.preset.name.ToString();
-        costInfo.text = building.preset.cost.ToString();
-        costPerTurnInfo.text = building.preset.costPerTurn.ToString();
-        populationInfo.text = building.preset.population.ToString();
-        jobsInfo.text = building.preset.jobs.ToString();
-        foodInfo.text = building.preset.food.ToString();
-        populationInfo.text = building.preset.polution.ToString();
+        nameInfo.text = "Tipe: " + building.preset.name.ToString();
+        costInfo.text = "Cost: " + building.preset.cost.ToString();
+        costPerTurnInfo.text = "Per day: " + building.preset.costPerTurn.ToString();
+        populationInfo.text = "Population: " + building.preset.population.ToString();
+        jobsInfo.text = "Jobs: " + building.preset.jobs.ToString();
+        foodInfo.text = "Food: " + building.preset.food.ToString();
+        populationInfo.text = "Polution: " + building.preset.polution.ToString();
     }
 
     public void CloseTab()

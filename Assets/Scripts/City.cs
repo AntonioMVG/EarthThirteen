@@ -42,6 +42,7 @@ public class City : MonoBehaviour
     public GameObject farmsContainer;
     public GameObject roadsContainer;
     public GameObject treesContainer;
+    public GameObject pipesContainer;
 
     public static City instance;
 
@@ -63,7 +64,8 @@ public class City : MonoBehaviour
         int hours = (int)curDayTime / 60;
         int minutes = (int)curDayTime % 60;
 
-        hourTime = (hours.ToString("00") + ":" + minutes.ToString("00"));
+        //hourTime = (hours.ToString("00") + ":" + minutes.ToString("00"));
+        hourTxt.text = (hours.ToString("00") + ":" + minutes.ToString("00"));
 
         if (curDayTime >= dayTime)
         {
@@ -103,6 +105,9 @@ public class City : MonoBehaviour
             case "Tree":
                 building.transform.SetParent(treesContainer.transform);
                 treesCounter++;
+                break;
+            case "Pipe":
+                building.transform.SetParent(pipesContainer.transform);
                 break;
         }
 
@@ -185,7 +190,7 @@ public class City : MonoBehaviour
         jobsTxt.text = curJobs.ToString() + "/" + maxJobs.ToString();
         foodTxt.text = curFood.ToString();
         polutionTxt.text = polution.ToString();
-        hourTxt.text = hourTime;
+        //hourTxt.text = hourTime;
         multiplierTxt.text = "x" + multiplier.ToString();
     }
 

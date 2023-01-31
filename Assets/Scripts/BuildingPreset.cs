@@ -11,4 +11,5 @@ public class BuildingPreset : ScriptableObject
     public int jobs;
     public int food;
     public int polution;
+    public bool water;
 }
