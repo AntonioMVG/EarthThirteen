@@ -10,7 +10,6 @@ public class City : MonoBehaviour
     public float curDayTime;
     public float dayTime;
     public float multiplier;
-    private string hourTime;
 
     [Header("Stats")]
     public int day;
@@ -18,7 +17,6 @@ public class City : MonoBehaviour
     public int curPopulation;
     public int curJobs;
     public int curFood;
-    public int treesCounter;
     public int polution;
     public int maxPopulation;
     public int maxJobs;
@@ -104,7 +102,6 @@ public class City : MonoBehaviour
                 break;
             case "Tree":
                 building.transform.SetParent(treesContainer.transform);
-                treesCounter++;
                 break;
             case "Pipe":
                 building.transform.SetParent(pipesContainer.transform);
@@ -190,7 +187,6 @@ public class City : MonoBehaviour
         jobsTxt.text = curJobs.ToString() + "/" + maxJobs.ToString();
         foodTxt.text = curFood.ToString();
         polutionTxt.text = polution.ToString();
-        //hourTxt.text = hourTime;
         multiplierTxt.text = "x" + multiplier.ToString();
     }
 

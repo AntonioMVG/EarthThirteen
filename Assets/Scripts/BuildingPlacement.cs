@@ -219,13 +219,13 @@ public class BuildingPlacement : MonoBehaviour
 
     public void ShowBuildingInfo(Building building)
     {
-        nameInfo.text = "Tipe: " + building.preset.name.ToString();
+        nameInfo.text = "Type: " + building.preset.name.ToString();
         costInfo.text = "Cost: " + building.preset.cost.ToString();
         costPerTurnInfo.text = "Per day: " + building.preset.costPerTurn.ToString();
         populationInfo.text = "Population: " + building.preset.population.ToString();
         jobsInfo.text = "Jobs: " + building.preset.jobs.ToString();
         foodInfo.text = "Food: " + building.preset.food.ToString();
-        populationInfo.text = "Polution: " + building.preset.polution.ToString();
+        polutionInfo.text = "Polution: " + building.preset.polution.ToString();
     }
 
     public void CloseTab()
