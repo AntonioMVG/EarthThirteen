@@ -62,7 +62,6 @@ public class City : MonoBehaviour
         int hours = (int)curDayTime / 60;
         int minutes = (int)curDayTime % 60;
 
-        //hourTime = (hours.ToString("00") + ":" + minutes.ToString("00"));
         hourTxt.text = (hours.ToString("00") + ":" + minutes.ToString("00"));
 
         if (curDayTime >= dayTime)

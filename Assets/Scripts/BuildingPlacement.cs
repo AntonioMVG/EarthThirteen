@@ -32,7 +32,6 @@ public class BuildingPlacement : MonoBehaviour
     public GameObject explosionParticle;
 
     [Header("Building Info")]
-    public GameObject buildingInfo;
     public TextMeshProUGUI nameInfo;
     public TextMeshProUGUI costInfo;
     public TextMeshProUGUI costPerTurnInfo;
@@ -41,86 +40,103 @@ public class BuildingPlacement : MonoBehaviour
     public TextMeshProUGUI foodInfo;
     public TextMeshProUGUI polutionInfo;
 
+    [Header("Panels Info")]
+    public GameObject buildingInfo;
+    public GameObject enoughMoneyInfo;
 
     // Called when we press a building UI button
     public void BeginNewBuildingPlacement(BuildingPreset preset)
     {
-        // TODO: Make sure we have enough money
-
-        currentlyPlacing = true;
-        curBuildingPreset = preset;
-
-        switch (preset.prefab.name)
+        // If you don't have enough money to build, active an informative panel
+        if (City.instance.money < preset.cost)
         {
-            case "BuildingHouse":
-                placementHouse.SetActive(true);
-                placementHouseAMVG.SetActive(false);
-                placementFactory.SetActive(false);
-                placementFarm.SetActive(false);
-                placementRoad.SetActive(false);
-                placementTree.SetActive(false);
-                placementPipe.SetActive(false);
-                buildingInfo.SetActive(false);
-                break;
-            case "HouseAMVG":
-                placementHouse.SetActive(false);
-                placementHouseAMVG.SetActive(true);
-                placementFactory.SetActive(false);
-                placementFarm.SetActive(false);
-                placementRoad.SetActive(false);
-                placementTree.SetActive(false);
-                placementPipe.SetActive(false);
-                buildingInfo.SetActive(false);
-                break;
-            case "BuildingFactory":
-                placementHouse.SetActive(false);
-                placementHouseAMVG.SetActive(false);
-                placementFactory.SetActive(true);
-                placementFarm.SetActive(false);
-                placementRoad.SetActive(false);
-                placementTree.SetActive(false);
-                placementPipe.SetActive(false);
-                buildingInfo.SetActive(false);
-                break;
-            case "BuildingFarm":
-                placementHouse.SetActive(false);
-                placementHouseAMVG.SetActive(false);
-                placementFactory.SetActive(false);
-                placementFarm.SetActive(true);
-                placementRoad.SetActive(false);
-                placementTree.SetActive(false);
-                placementPipe.SetActive(false);
-                buildingInfo.SetActive(false);
-                break;
-            case "BuildingRoad":
-                placementHouse.SetActive(false);
-                placementFactory.SetActive(false);
-                placementFarm.SetActive(false);
-                placementRoad.SetActive(true);
-                placementTree.SetActive(false);
-                placementPipe.SetActive(false);
-                buildingInfo.SetActive(false);
-                break;
-            case "BuildingTree":
-                placementHouse.SetActive(false);
-                placementHouseAMVG.SetActive(false);
-                placementFactory.SetActive(false);
-                placementFarm.SetActive(false);
-                placementRoad.SetActive(false);
-                placementTree.SetActive(true);
-                placementPipe.SetActive(false);
-                buildingInfo.SetActive(false);
-                break;
-            case "BuildingPipe":
-                placementHouse.SetActive(false);
-                placementHouseAMVG.SetActive(false);
-                placementFactory.SetActive(false);
-                placementFarm.SetActive(false);
-                placementRoad.SetActive(false);
-                placementTree.SetActive(false);
-                placementPipe.SetActive(true);
-                buildingInfo.SetActive(false);
-                break;
+            currentlyPlacing = false;
+            enoughMoneyInfo.SetActive(true);
+        }
+        else
+        {
+            currentlyPlacing = true;
+            curBuildingPreset = preset;
+
+            switch (preset.prefab.name)
+            {
+                case "BuildingHouse":
+                    placementHouse.SetActive(true);
+                    placementHouseAMVG.SetActive(false);
+                    placementFactory.SetActive(false);
+                    placementFarm.SetActive(false);
+                    placementRoad.SetActive(false);
+                    placementTree.SetActive(false);
+                    placementPipe.SetActive(false);
+                    buildingInfo.SetActive(false);
+                    enoughMoneyInfo.SetActive(false);
+                    break;
+                case "HouseAMVG":
+                    placementHouse.SetActive(false);
+                    placementHouseAMVG.SetActive(true);
+                    placementFactory.SetActive(false);
+                    placementFarm.SetActive(false);
+                    placementRoad.SetActive(false);
+                    placementTree.SetActive(false);
+                    placementPipe.SetActive(false);
+                    buildingInfo.SetActive(false);
+                    enoughMoneyInfo.SetActive(false);
+                    break;
+                case "BuildingFactory":
+                    placementHouse.SetActive(false);
+                    placementHouseAMVG.SetActive(false);
+                    placementFactory.SetActive(true);
+                    placementFarm.SetActive(false);
+                    placementRoad.SetActive(false);
+                    placementTree.SetActive(false);
+                    placementPipe.SetActive(false);
+                    buildingInfo.SetActive(false);
+                    enoughMoneyInfo.SetActive(false);
+                    break;
+                case "BuildingFarm":
+                    placementHouse.SetActive(false);
+                    placementHouseAMVG.SetActive(false);
+                    placementFactory.SetActive(false);
+                    placementFarm.SetActive(true);
+                    placementRoad.SetActive(false);
+                    placementTree.SetActive(false);
+                    placementPipe.SetActive(false);
+                    buildingInfo.SetActive(false);
+                    enoughMoneyInfo.SetActive(false);
+                    break;
+                case "BuildingRoad":
+                    placementHouse.SetActive(false);
+                    placementFactory.SetActive(false);
+                    placementFarm.SetActive(false);
+                    placementRoad.SetActive(true);
+                    placementTree.SetActive(false);
+                    placementPipe.SetActive(false);
+                    buildingInfo.SetActive(false);
+                    enoughMoneyInfo.SetActive(false);
+                    break;
+                case "BuildingTree":
+                    placementHouse.SetActive(false);
+                    placementHouseAMVG.SetActive(false);
+                    placementFactory.SetActive(false);
+                    placementFarm.SetActive(false);
+                    placementRoad.SetActive(false);
+                    placementTree.SetActive(true);
+                    placementPipe.SetActive(false);
+                    buildingInfo.SetActive(false);
+                    enoughMoneyInfo.SetActive(false);
+                    break;
+                case "BuildingPipe":
+                    placementHouse.SetActive(false);
+                    placementHouseAMVG.SetActive(false);
+                    placementFactory.SetActive(false);
+                    placementFarm.SetActive(false);
+                    placementRoad.SetActive(false);
+                    placementTree.SetActive(false);
+                    placementPipe.SetActive(true);
+                    buildingInfo.SetActive(false);
+                    enoughMoneyInfo.SetActive(false);
+                    break;
+            }
         }
     }
 
@@ -138,6 +154,7 @@ public class BuildingPlacement : MonoBehaviour
         placementPipe.SetActive(false);
         bulldozerIndicator.SetActive(false);
         buildingInfo.SetActive(false);
+        enoughMoneyInfo.SetActive(false);
     }
 
     // Turn Bulldozer on/off
@@ -219,17 +236,26 @@ public class BuildingPlacement : MonoBehaviour
 
     public void ShowBuildingInfo(Building building)
     {
-        nameInfo.text = "Type: " + building.preset.name.ToString();
-        costInfo.text = "Cost: " + building.preset.cost.ToString();
-        costPerTurnInfo.text = "Per day: " + building.preset.costPerTurn.ToString();
-        populationInfo.text = "Population: " + building.preset.population.ToString();
-        jobsInfo.text = "Jobs: " + building.preset.jobs.ToString();
-        foodInfo.text = "Food: " + building.preset.food.ToString();
-        polutionInfo.text = "Polution: " + building.preset.polution.ToString();
+        if (building == null)
+        {
+            buildingInfo.SetActive(false);
+            return;
+        }
+        else
+        {    
+            nameInfo.text = "Type: " + building.preset.name.ToString();
+            costInfo.text = "Cost: " + building.preset.cost.ToString();
+            costPerTurnInfo.text = "Per day: " + building.preset.costPerTurn.ToString();
+            populationInfo.text = "Population: " + building.preset.population.ToString();
+            jobsInfo.text = "Jobs: " + building.preset.jobs.ToString();
+            foodInfo.text = "Food: " + building.preset.food.ToString();
+            polutionInfo.text = "Polution: " + building.preset.polution.ToString();
+        }
     }
 
     public void CloseTab()
     {
         buildingInfo.SetActive(false);
+        enoughMoneyInfo.SetActive(false);
     }
 }
