@@ -59,10 +59,10 @@ public class City : MonoBehaviour
     {
         curDayTime += Time.deltaTime * multiplier;
 
-        int hours = (int)curDayTime / 60;
-        int minutes = (int)curDayTime % 60;
+        float hours = (float)(curDayTime / dayTime) * 24;
+        float minutes = (hours - Mathf.FloorToInt(hours)) * 60;
 
-        hourTxt.text = (hours.ToString("00") + ":" + minutes.ToString("00"));
+        hourTxt.text = (Mathf.FloorToInt(hours).ToString("00") + ":" + Mathf.FloorToInt(minutes).ToString("00"));
 
         if (curDayTime >= dayTime)
         {
@@ -193,11 +193,17 @@ public class City : MonoBehaviour
 
     public void DayAvanced()
     {
-        multiplier *= 2;
+        if(multiplier <= 16)
+        {
+            multiplier *= 2;
+        }
     }
 
     public void DaySlow()
     {
-        multiplier /= 2;
+        if(multiplier > 1)
+        {
+            multiplier /= 2;
+        }
     }
 }
