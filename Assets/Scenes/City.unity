@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.10331461, g: 0.15740824, b: 0.2809652, a: 1}
+  m_IndirectSpecularColor: {r: 0.109070435, g: 0.16734402, b: 0.29981998, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -215,7 +215,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4534300232806540552, guid: d9598891037c79a408495ba4bb64c982, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d9598891037c79a408495ba4bb64c982, type: 3}
 --- !u!4 &27520782 stripped
 Transform:
@@ -2255,7 +2256,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3164714851461971215, guid: 4754c6585ddd70c42a7098f7d9d5f981, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4754c6585ddd70c42a7098f7d9d5f981, type: 3}
 --- !u!4 &431542236 stripped
 Transform:
@@ -3700,7 +3702,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingTrees
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5457997790468195047, guid: ce0cf2da6c90a7a47a44dd4283d34511, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ce0cf2da6c90a7a47a44dd4283d34511, type: 3}
 --- !u!4 &762594545 stripped
 Transform:
@@ -5777,7 +5780,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6080850641497355286, guid: b661d7d5942e2f640b384ab1d1695846, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b661d7d5942e2f640b384ab1d1695846, type: 3}
 --- !u!4 &1141705589 stripped
 Transform:
@@ -5980,7 +5984,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingPipe
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1217992788, guid: 6373ed3f85bd2e748aa3e1883eeb0324, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6373ed3f85bd2e748aa3e1883eeb0324, type: 3}
 --- !u!4 &1217992786 stripped
 Transform:
@@ -6212,7 +6217,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingFactory
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2413197029990870129, guid: fdcb367f544b582479606e17547d7c0c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fdcb367f544b582479606e17547d7c0c, type: 3}
 --- !u!4 &1263637803 stripped
 Transform:
@@ -6888,7 +6894,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingRoad
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1167451684788565858, guid: 2084966edb4352747a99b8416dd2a172, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2084966edb4352747a99b8416dd2a172, type: 3}
 --- !u!4 &1331967276 stripped
 Transform:
@@ -9014,6 +9021,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15c3cf53ceba5848ab5d7595bdf6add, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &1983168320
 MonoBehaviour:
   m_ObjectHideFlags: 0

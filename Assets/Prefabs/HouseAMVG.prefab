@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5929470680739332415}
   - component: {fileID: -4709163781884474327}
   - component: {fileID: -3164714851461971215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HouseAMVG
   m_TagString: HouseAMVG
   m_Icon: {fileID: 0}
@@ -58,8 +58,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.9994984, y: 3.0031688, z: 1.9847546}
-  m_Center: {x: 0.0048532486, y: 1.5115603, z: -0.008939028}
+  m_Size: {x: 3.9994984, y: 0.1, z: 1.9847546}
+  m_Center: {x: 0.0048532486, y: 0, z: -0.008939028}
 --- !u!1001 &5929470681833585395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,6 +114,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: afa22864aaf6ecb49aad16244ea01880, type: 3}
       propertyPath: m_Name
       value: House_amvg
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afa22864aaf6ecb49aad16244ea01880, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afa22864aaf6ecb49aad16244ea01880, type: 3}

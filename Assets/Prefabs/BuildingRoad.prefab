@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6712754397831764295}
   - component: {fileID: 9221437331283964443}
   - component: {fileID: 6878721373293507628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 1971416297993961170}
   - component: {fileID: 4696980286732540137}
   - component: {fileID: 1167451684788565858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildingRoad
   m_TagString: Road
   m_Icon: {fileID: 0}
@@ -156,5 +156,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5467849, z: 1}
-  m_Center: {x: 0, y: 0.22660756, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

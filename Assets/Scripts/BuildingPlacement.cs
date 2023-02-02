@@ -193,7 +193,7 @@ public class BuildingPlacement : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && currentlyPlacing)
         {
             // If pressing the HUD when have a building to place, prevents being sent to the Dummy position
-            if (placementIndicator.transform.position != dummyPos)
+            if (placementIndicator.transform.position != dummyPos && !Selector.instance.IsOccupied())
             {
                 placementIndicator.GetComponent<AudioSource>().Play();
                 GameObject particles = Instantiate(dustParticle, placementIndicator.transform.position, Quaternion.identity);

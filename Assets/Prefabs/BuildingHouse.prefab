@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5583656444732363629}
   - component: {fileID: 5583656444732363634}
   - component: {fileID: 6080850641497355286}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildingHouse
   m_TagString: House
   m_Icon: {fileID: 0}
@@ -58,8 +58,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.9165515, z: 1}
-  m_Center: {x: 0, y: 0.44808197, z: 0}
+  m_Size: {x: 1, y: 0.1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5583656443907299807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -126,6 +126,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 63b8ecdf3da0be84f8ad54537e5ea6ec, type: 3}
       propertyPath: m_Name
       value: house
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 63b8ecdf3da0be84f8ad54537e5ea6ec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478117240358956075, guid: 63b8ecdf3da0be84f8ad54537e5ea6ec, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63b8ecdf3da0be84f8ad54537e5ea6ec, type: 3}

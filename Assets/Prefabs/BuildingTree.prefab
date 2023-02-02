@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5112884114089770818}
   - component: {fileID: 6253991429725709896}
   - component: {fileID: 2260209337620817964}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildingTrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1971416297993961170}
   - component: {fileID: 2455272856931565284}
   - component: {fileID: 5457997790468195047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildingTree
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -141,5 +141,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1381693, y: 4.2966123, z: 2.4140282}
-  m_Center: {x: 0.012836933, y: 2.0676324, z: -0.09992123}
+  m_Size: {x: 2.1381693, y: 0.1, z: 2.4140282}
+  m_Center: {x: 0.012836933, y: 0, z: -0.09992123}

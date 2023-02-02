@@ -9,6 +9,8 @@ public class Selector : MonoBehaviour
 
     public static Selector instance;
 
+    [SerializeField] private LayerMask mask;
+
     private void Awake()
     {
         instance = this;
@@ -57,5 +59,17 @@ public class Selector : MonoBehaviour
         }
 
         return null;
+    }
+
+    public bool IsOccupied()
+    {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
+        {
+            return true;
+        }
+        return false;
     }
 }
