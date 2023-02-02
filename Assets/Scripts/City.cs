@@ -108,9 +108,10 @@ public class City : MonoBehaviour
         }
 
         money -= building.preset.cost;
-        polution += building.preset.polution;
         maxPopulation += building.preset.population;
         maxJobs += building.preset.jobs;
+        curFood += building.preset.food;
+        polution += building.preset.polution;
 
         UpdateStatsText();
     }
@@ -120,6 +121,7 @@ public class City : MonoBehaviour
     {
         buildings.Remove(building);
 
+        money += building.preset.cost / 3;
         maxPopulation -= building.preset.population;
         maxJobs -= building.preset.jobs;
 

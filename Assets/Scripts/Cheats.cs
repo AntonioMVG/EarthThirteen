@@ -13,6 +13,7 @@ public class Cheats : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             panelCheats.SetActive(true);
+            inputCheats.Select();
         }
     }
 
@@ -38,23 +39,23 @@ public class Cheats : MonoBehaviour
                     panelCheats.SetActive(false);
                     break;
                 case "thanos":
-                    foreach (Transform child in City.instance.housesContainer.GetComponentInParent<Transform>())
+                    foreach (Transform child in City.instance.housesContainer.transform)
                     {
                         Destroy(child.gameObject);
                     }
-                    foreach (Transform child in City.instance.factoriesContainer.GetComponentInParent<Transform>())
+                    foreach (Transform child in City.instance.factoriesContainer.transform)
                     {
                         Destroy(child.gameObject);
                     }
-                    foreach (Transform child in City.instance.farmsContainer.GetComponentInParent<Transform>())
+                    foreach (Transform child in City.instance.farmsContainer.transform)
                     {
                         Destroy(child.gameObject);
                     }
-                    foreach (Transform child in City.instance.roadsContainer.GetComponentInParent<Transform>())
+                    foreach (Transform child in City.instance.roadsContainer.transform)
                     {
                         Destroy(child.gameObject);
                     }
-                    foreach (Transform child in City.instance.treesContainer.GetComponentInParent<Transform>())
+                    foreach (Transform child in City.instance.treesContainer.transform)
                     {
                         Destroy(child.gameObject);
                     }
