@@ -35,6 +35,7 @@ public class City : MonoBehaviour
     public List<Building> buildings = new List<Building>();
 
     [Header("Buildings Container")]
+    public GameObject containers;
     public GameObject housesContainer;
     public GameObject factoriesContainer;
     public GameObject farmsContainer;
@@ -150,6 +151,7 @@ public class City : MonoBehaviour
 
     private void CalculatePopulation()
     {
+        // TODO: Mejorar este sistema, falla mucho
         if(curFood >= curPopulation && curPopulation < maxPopulation)
         {
             curFood -= curPopulation / 4;

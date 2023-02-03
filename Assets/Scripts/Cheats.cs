@@ -7,7 +7,7 @@ public class Cheats : MonoBehaviour
 {
     public GameObject panelCheats;
     public TMP_InputField inputCheats;
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
@@ -23,6 +23,11 @@ public class Cheats : MonoBehaviour
         {
             switch (inputCheats.text)
             {
+                case "montgomeryburns":
+                    City.instance.money += 100000;
+                    inputCheats.text = string.Empty;
+                    panelCheats.SetActive(false);
+                    break;
                 case "goldman":
                     City.instance.money += 5000;
                     inputCheats.text = string.Empty;
@@ -38,30 +43,21 @@ public class Cheats : MonoBehaviour
                     inputCheats.text = string.Empty;
                     panelCheats.SetActive(false);
                     break;
-                case "thanos":
-                    foreach (Transform child in City.instance.housesContainer.transform)
+                case "endofdays":
+                    foreach (var zone in City.instance.containers.transform)
                     {
-                        Destroy(child.gameObject);
-                    }
-                    foreach (Transform child in City.instance.factoriesContainer.transform)
-                    {
-                        Destroy(child.gameObject);
-                    }
-                    foreach (Transform child in City.instance.farmsContainer.transform)
-                    {
-                        Destroy(child.gameObject);
-                    }
-                    foreach (Transform child in City.instance.roadsContainer.transform)
-                    {
-                        Destroy(child.gameObject);
-                    }
-                    foreach (Transform child in City.instance.treesContainer.transform)
-                    {
-                        Destroy(child.gameObject);
+                        foreach (Transform child in City.instance.containers.transform.GetComponentInChildren<Transform>())
+                        {
+                            Destroy(child.gameObject);
+                        }
                     }
                     inputCheats.text = string.Empty;
                     panelCheats.SetActive(false);
                     break;
+                // TODO: More cheats
+                // Truco para quemar los arboles y fastidiar la polucion
+                // Truco para hacer llover
+                // Truco para hacer caer un meteorito y destruir lo construido segun la zona
             }
         }
     }

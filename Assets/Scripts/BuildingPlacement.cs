@@ -14,6 +14,7 @@ public class BuildingPlacement : MonoBehaviour
 
     private float indicatorUpdateRate = 0.05f; // Seconds
     private float lastUpdateTime;
+
     private Vector3 curIndicatorPos;
 
     [Header("Placements")]
@@ -24,6 +25,7 @@ public class BuildingPlacement : MonoBehaviour
     public GameObject placementFactory;
     public GameObject placementFarm;
     public GameObject placementRoad;
+    public GameObject placementCurveRoad;
     public GameObject placementTree;
     public GameObject placementPipe;
 
@@ -66,6 +68,7 @@ public class BuildingPlacement : MonoBehaviour
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
+                    placementCurveRoad.SetActive(false);
                     placementTree.SetActive(false);
                     placementPipe.SetActive(false);
                     buildingInfo.SetActive(false);
@@ -77,6 +80,7 @@ public class BuildingPlacement : MonoBehaviour
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
+                    placementCurveRoad.SetActive(false);
                     placementTree.SetActive(false);
                     placementPipe.SetActive(false);
                     buildingInfo.SetActive(false);
@@ -88,6 +92,7 @@ public class BuildingPlacement : MonoBehaviour
                     placementFactory.SetActive(true);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
+                    placementCurveRoad.SetActive(false);
                     placementTree.SetActive(false);
                     placementPipe.SetActive(false);
                     buildingInfo.SetActive(false);
@@ -99,6 +104,7 @@ public class BuildingPlacement : MonoBehaviour
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(true);
                     placementRoad.SetActive(false);
+                    placementCurveRoad.SetActive(false);
                     placementTree.SetActive(false);
                     placementPipe.SetActive(false);
                     buildingInfo.SetActive(false);
@@ -109,6 +115,18 @@ public class BuildingPlacement : MonoBehaviour
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(true);
+                    placementCurveRoad.SetActive(false);
+                    placementTree.SetActive(false);
+                    placementPipe.SetActive(false);
+                    buildingInfo.SetActive(false);
+                    enoughMoneyInfo.SetActive(false);
+                    break;
+                case "BuildingCurveRoad":
+                    placementHouse.SetActive(false);
+                    placementFactory.SetActive(false);
+                    placementFarm.SetActive(false);
+                    placementRoad.SetActive(false);
+                    placementCurveRoad.SetActive(true);
                     placementTree.SetActive(false);
                     placementPipe.SetActive(false);
                     buildingInfo.SetActive(false);
@@ -120,6 +138,7 @@ public class BuildingPlacement : MonoBehaviour
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
+                    placementCurveRoad.SetActive(false);
                     placementTree.SetActive(true);
                     placementPipe.SetActive(false);
                     buildingInfo.SetActive(false);
@@ -131,6 +150,7 @@ public class BuildingPlacement : MonoBehaviour
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
+                    placementCurveRoad.SetActive(false);
                     placementTree.SetActive(false);
                     placementPipe.SetActive(true);
                     buildingInfo.SetActive(false);
@@ -150,6 +170,7 @@ public class BuildingPlacement : MonoBehaviour
         placementFactory.SetActive(false);
         placementFarm.SetActive(false);
         placementRoad.SetActive(false);
+        placementCurveRoad.SetActive(false);
         placementTree.SetActive(false);
         placementPipe.SetActive(false);
         bulldozerIndicator.SetActive(false);

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9221437331283964443}
   - component: {fileID: 6878721373293507628}
   m_Layer: 6
-  m_Name: Road
+  m_Name: CurveRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 515a6114c899a844eaf4f249a8e1b045, type: 2}
+  - {fileID: 2100000, guid: 4bfef3a95e58f8649b65f466dfd66f72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4696980286732540137}
   - component: {fileID: 1167451684788565858}
   m_Layer: 6
-  m_Name: BuildingRoad
+  m_Name: BuildingCurveRoad
   m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301bd0a92433c6b43bc5632c8667a559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preset: {fileID: 11400000, guid: 0a94a5ac898a0b24ba902d5e803a6833, type: 2}
+  preset: {fileID: 11400000, guid: 7f8d540539afcdd43a462fd15860588b, type: 2}
 --- !u!65 &1167451684788565858
 BoxCollider:
   m_ObjectHideFlags: 0
