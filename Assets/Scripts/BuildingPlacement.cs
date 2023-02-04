@@ -20,8 +20,9 @@ public class BuildingPlacement : MonoBehaviour
     [Header("Placements")]
     public GameObject placementIndicator;
     public GameObject bulldozerIndicator;
-    public GameObject placementHouse;
     public GameObject placementHouseAMVG;
+    public GameObject placementHouse;
+    public GameObject placementFactoryAMVG;
     public GameObject placementFactory;
     public GameObject placementFarm;
     public GameObject placementRoad;
@@ -62,9 +63,10 @@ public class BuildingPlacement : MonoBehaviour
 
             switch (preset.prefab.name)
             {
-                case "BuildingHouse":
-                    placementHouse.SetActive(true);
-                    placementHouseAMVG.SetActive(false);
+                case "HouseAMVG":
+                    placementHouseAMVG.SetActive(true);
+                    placementHouse.SetActive(false);
+                    placementFactoryAMVG.SetActive(false);
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
@@ -74,9 +76,23 @@ public class BuildingPlacement : MonoBehaviour
                     buildingInfo.SetActive(false);
                     enoughMoneyInfo.SetActive(false);
                     break;
-                case "HouseAMVG":
+                case "BuildingHouse":
+                    placementHouseAMVG.SetActive(false);
+                    placementHouse.SetActive(true);
+                    placementFactoryAMVG.SetActive(false);
+                    placementFactory.SetActive(false);
+                    placementFarm.SetActive(false);
+                    placementRoad.SetActive(false);
+                    placementCurveRoad.SetActive(false);
+                    placementTree.SetActive(false);
+                    placementPipe.SetActive(false);
+                    buildingInfo.SetActive(false);
+                    enoughMoneyInfo.SetActive(false);
+                    break;
+                case "FactoryAMVG":
+                    placementHouseAMVG.SetActive(false);
                     placementHouse.SetActive(false);
-                    placementHouseAMVG.SetActive(true);
+                    placementFactoryAMVG.SetActive(true);
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
@@ -87,8 +103,9 @@ public class BuildingPlacement : MonoBehaviour
                     enoughMoneyInfo.SetActive(false);
                     break;
                 case "BuildingFactory":
-                    placementHouse.SetActive(false);
                     placementHouseAMVG.SetActive(false);
+                    placementHouse.SetActive(false);
+                    placementFactoryAMVG.SetActive(false);
                     placementFactory.SetActive(true);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
@@ -99,8 +116,9 @@ public class BuildingPlacement : MonoBehaviour
                     enoughMoneyInfo.SetActive(false);
                     break;
                 case "BuildingFarm":
-                    placementHouse.SetActive(false);
                     placementHouseAMVG.SetActive(false);
+                    placementHouse.SetActive(false);
+                    placementFactoryAMVG.SetActive(false);
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(true);
                     placementRoad.SetActive(false);
@@ -111,7 +129,9 @@ public class BuildingPlacement : MonoBehaviour
                     enoughMoneyInfo.SetActive(false);
                     break;
                 case "BuildingRoad":
+                    placementHouseAMVG.SetActive(false);
                     placementHouse.SetActive(false);
+                    placementFactoryAMVG.SetActive(false);
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(true);
@@ -122,7 +142,9 @@ public class BuildingPlacement : MonoBehaviour
                     enoughMoneyInfo.SetActive(false);
                     break;
                 case "BuildingCurveRoad":
+                    placementHouseAMVG.SetActive(false);
                     placementHouse.SetActive(false);
+                    placementFactoryAMVG.SetActive(false);
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
@@ -133,8 +155,9 @@ public class BuildingPlacement : MonoBehaviour
                     enoughMoneyInfo.SetActive(false);
                     break;
                 case "BuildingTree":
-                    placementHouse.SetActive(false);
                     placementHouseAMVG.SetActive(false);
+                    placementHouse.SetActive(false);
+                    placementFactoryAMVG.SetActive(false);
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
@@ -145,8 +168,9 @@ public class BuildingPlacement : MonoBehaviour
                     enoughMoneyInfo.SetActive(false);
                     break;
                 case "BuildingPipe":
-                    placementHouse.SetActive(false);
                     placementHouseAMVG.SetActive(false);
+                    placementHouse.SetActive(false);
+                    placementFactoryAMVG.SetActive(false);
                     placementFactory.SetActive(false);
                     placementFarm.SetActive(false);
                     placementRoad.SetActive(false);
@@ -165,8 +189,9 @@ public class BuildingPlacement : MonoBehaviour
     {
         currentlyPlacing = false;
         currentlyBulldozering = false;
-        placementHouse.SetActive(false);
         placementHouseAMVG.SetActive(false);
+        placementHouse.SetActive(false);
+        placementFactoryAMVG.SetActive(false);
         placementFactory.SetActive(false);
         placementFarm.SetActive(false);
         placementRoad.SetActive(false);

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c674ad6dc6761b46bb5a118b2c4049f, type: 3}
   m_Name: HouseAMVG
   m_EditorClassIdentifier: 
-  cost: 15
+  cost: 50
   costPerTurn: 5
   prefab: {fileID: 5929470680739332414, guid: 4754c6585ddd70c42a7098f7d9d5f981, type: 3}
-  population: 10
-  jobs: 0
+  population: 4
+  jobs: 1
   food: -5
+  polution: 1

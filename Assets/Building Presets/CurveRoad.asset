@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c674ad6dc6761b46bb5a118b2c4049f, type: 3}
   m_Name: CurveRoad
   m_EditorClassIdentifier: 
-  cost: 1
+  cost: 2
   costPerTurn: 1
   prefab: {fileID: 8023037909794250716, guid: 0b13c2748c721ed448c7cd78beb32846, type: 3}
   population: 0

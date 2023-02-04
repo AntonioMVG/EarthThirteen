@@ -85,11 +85,14 @@ public class City : MonoBehaviour
 
         switch (building.tag)
         {
+            case "HouseAMVG":
+                building.transform.SetParent(housesContainer.transform);
+                break;
             case "House":
                 building.transform.SetParent(housesContainer.transform);
                 break;
-            case "HouseAMVG":
-                building.transform.SetParent(housesContainer.transform);
+            case "FactoryAMVG":
+                building.transform.SetParent(factoriesContainer.transform);
                 break;
             case "Factory":
                 building.transform.SetParent(factoriesContainer.transform);

@@ -11,6 +11,7 @@ TagManager:
   - Tree
   - HouseAMVG
   - Barricada
+  - FactoryAMVG
   layers:
   - Default
   - TransparentFX

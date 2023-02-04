@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c674ad6dc6761b46bb5a118b2c4049f, type: 3}
   m_Name: Road
   m_EditorClassIdentifier: 
-  cost: 1
+  cost: 2
   costPerTurn: 1
   prefab: {fileID: 8023037909794250716, guid: 2084966edb4352747a99b8416dd2a172, type: 3}
   population: 0
   jobs: 0
   food: 0
+  polution: 0
