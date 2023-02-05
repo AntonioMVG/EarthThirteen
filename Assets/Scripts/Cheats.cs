@@ -52,16 +52,17 @@ public class Cheats : MonoBehaviour
                 // Truco para hacer llover
                 // Truco para hacer caer un meteorito y destruir lo construido segun la zona
                 // Truco para convertir a parte de la población en zombie
-                    /*case "endofdays":
-                        foreach (var zone in City.instance.containers.transform)
+                    case "endofdays":
+                        foreach (Transform zone in City.instance.containers.transform)
                         {
-                            foreach (Transform child in City.instance.containers.transform.GetComponentInChildren<Transform>())
+                            foreach (Transform child in zone)
                             {
                                 Destroy(child.gameObject);
                             }
                             GameObject particles = Instantiate(explosionParticle, City.instance.containers.transform.position, Quaternion.identity);
                             Destroy(particles, 0.2f);
                         }
+                        City.instance.buildings.Clear();
                         City.instance.curPopulation = 0;
                         City.instance.maxPopulation = 0;
                         City.instance.curJobs = 0;
@@ -70,7 +71,7 @@ public class Cheats : MonoBehaviour
                         City.instance.polution = 0;
                         inputCheats.text = string.Empty;
                         panelCheats.SetActive(false);
-                        break;*/
+                        break;
             }
         }
     }

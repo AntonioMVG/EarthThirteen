@@ -65,6 +65,11 @@ public class City : MonoBehaviour
 
         hourTxt.text = (Mathf.FloorToInt(hours).ToString("00") + ":" + Mathf.FloorToInt(minutes).ToString("00"));
 
+        if(curDayTime >= (dayTime /2))
+            TurnOnLights();
+        else
+            TurnOffLights();
+
         if (curDayTime >= dayTime)
         {
             curDayTime = 0;
@@ -209,6 +214,34 @@ public class City : MonoBehaviour
         if(multiplier > 1)
         {
             multiplier /= 2;
+        }
+    }
+
+    public void TurnOnLights()
+    {
+        foreach(Building building in buildings)
+        {
+            if (building != null)
+            {
+                for (int i = 1; i < transform.childCount; i++)
+                {
+                    building.transform.GetChild(i).gameObject.SetActive(true);
+                }
+            }
+        }
+    }
+
+    public void TurnOffLights()
+    {
+        foreach(Building building in buildings)
+        {
+            if(building != null)
+            {
+                for (int i = 1; i < transform.childCount; i++)
+                {
+                    building.transform.GetChild(i).gameObject.SetActive(false);
+                }
+            }
         }
     }
 }
