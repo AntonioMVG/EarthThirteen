@@ -43,11 +43,19 @@ public class City : MonoBehaviour
     public GameObject treesContainer;
     public GameObject pipesContainer;
 
+    [Header("End Game")]
+    public GameObject endGameInfo;
+
     public static City instance;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        endGameInfo.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -158,7 +166,7 @@ public class City : MonoBehaviour
 
         if(money < 0)
         {
-            Debug.Log("Game Over");
+            endGameInfo.SetActive(true);
         }
     }
 
