@@ -58,13 +58,13 @@ public class City : MonoBehaviour
 
     private void DayCicle()
     {
+        // Calculate the current hour of day, based on 24h, depending on the DayTime
         curDayTime += Time.deltaTime * multiplier;
-
         float hours = (float)(curDayTime / dayTime) * 24;
         float minutes = (hours - Mathf.FloorToInt(hours)) * 60;
-
         hourTxt.text = (Mathf.FloorToInt(hours).ToString("00") + ":" + Mathf.FloorToInt(minutes).ToString("00"));
 
+        // Turn of/off the lights depending on the time of day
         if(curDayTime >= (dayTime /2))
             TurnOnLights();
         else
@@ -155,6 +155,11 @@ public class City : MonoBehaviour
         money += curJobs * incomePerJobs;
         foreach (Building building in buildings)
             money -= building.preset.costPerTurn;
+
+        if(money < 0)
+        {
+            Debug.Log("Game Over");
+        }
     }
 
     private void CalculatePopulation()

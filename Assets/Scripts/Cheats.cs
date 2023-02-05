@@ -14,9 +14,9 @@ public class Cheats : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Backslash))
         {
-            panelCheats.SetActive(true);
+            panelCheats.SetActive(!panelCheats.activeSelf);
             inputCheats.Select();
         }
     }

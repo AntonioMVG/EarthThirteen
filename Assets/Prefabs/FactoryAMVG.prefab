@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3930411708950416136}
-  - {fileID: 2305868276860792258}
+  - {fileID: 2363000117395258670}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preset: {fileID: 11400000, guid: 0b1164f58f52b424a8a9edeada586bbf, type: 2}
---- !u!1 &7900696833687535300
+--- !u!1 &6579636458457055346
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,8 +55,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2305868276860792258}
-  - component: {fileID: 6845582682851502484}
+  - component: {fileID: 2363000117395258670}
+  - component: {fileID: 7991444059511690486}
   m_Layer: 6
   m_Name: Point Light
   m_TagString: Light
@@ -64,35 +64,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &2305868276860792258
+--- !u!4 &2363000117395258670
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7900696833687535300}
+  m_GameObject: {fileID: 6579636458457055346}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.235, y: 5, z: 0.286}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6892348637190207858}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!108 &6845582682851502484
+--- !u!108 &7991444059511690486
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7900696833687535300}
+  m_GameObject: {fileID: 6579636458457055346}
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9254902, g: 0.9002416, b: 0, a: 1}
-  m_Intensity: 6
-  m_Range: 2
+  m_Intensity: 4
+  m_Range: 6
   m_SpotAngle: 50
   m_InnerSpotAngle: 2
   m_CookieSize: 10
