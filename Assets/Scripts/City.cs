@@ -223,7 +223,7 @@ public class City : MonoBehaviour
         {
             if (building != null)
             {
-                for (int i = 1; i < transform.childCount; i++)
+                for (int i = 1; i < building.transform.childCount; i++)
                 {
                     building.transform.GetChild(i).gameObject.SetActive(true);
                 }
@@ -237,7 +237,7 @@ public class City : MonoBehaviour
         {
             if(building != null)
             {
-                for (int i = 1; i < transform.childCount; i++)
+                for (int i = 1; i < building.transform.childCount; i++)
                 {
                     building.transform.GetChild(i).gameObject.SetActive(false);
                 }
