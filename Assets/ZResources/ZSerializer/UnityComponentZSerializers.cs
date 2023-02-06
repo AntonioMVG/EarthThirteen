@@ -30,8 +30,6 @@ public sealed class LightZSerializer : ZSerializer.Internal.ZSerializer {
     public System.Int32 cullingMask;
     public System.Int32 renderingLayerMask;
     public UnityEngine.LightShadowCasterMode lightShadowCasterMode;
-    public System.Single shadowRadius;
-    public System.Single shadowAngle;
     public UnityEngine.LightShadows shadows;
     public System.Single shadowStrength;
     public UnityEngine.Rendering.LightShadowResolution shadowResolution;
@@ -39,8 +37,6 @@ public sealed class LightZSerializer : ZSerializer.Internal.ZSerializer {
     public System.Single cookieSize;
     public UnityEngine.Texture cookie;
     public UnityEngine.LightRenderMode renderMode;
-    public UnityEngine.Vector2 areaSize;
-    public UnityEngine.LightmapBakeType lightmapBakeType;
     public System.Boolean enabled;
     public UnityEngine.HideFlags hideFlags;
     public LightZSerializer (string ZUID, string GOZUID) : base(ZUID, GOZUID) {
@@ -69,8 +65,6 @@ public sealed class LightZSerializer : ZSerializer.Internal.ZSerializer {
         cullingMask = instance.cullingMask;
         renderingLayerMask = instance.renderingLayerMask;
         lightShadowCasterMode = instance.lightShadowCasterMode;
-        shadowRadius = instance.shadowRadius;
-        shadowAngle = instance.shadowAngle;
         shadows = instance.shadows;
         shadowStrength = instance.shadowStrength;
         shadowResolution = instance.shadowResolution;
@@ -78,8 +72,6 @@ public sealed class LightZSerializer : ZSerializer.Internal.ZSerializer {
         cookieSize = instance.cookieSize;
         cookie = instance.cookie;
         renderMode = instance.renderMode;
-        areaSize = instance.areaSize;
-        lightmapBakeType = instance.lightmapBakeType;
         enabled = instance.enabled;
         hideFlags = instance.hideFlags;
         ZSerializerSettings.Instance.unityComponentDataList.FirstOrDefault(data => data.Type == typeof(UnityEngine.Light))?.OnSerialize?.Invoke(this, instance);
@@ -111,8 +103,6 @@ public sealed class LightZSerializer : ZSerializer.Internal.ZSerializer {
         instance.cullingMask = cullingMask;
         instance.renderingLayerMask = renderingLayerMask;
         instance.lightShadowCasterMode = lightShadowCasterMode;
-        instance.shadowRadius = shadowRadius;
-        instance.shadowAngle = shadowAngle;
         instance.shadows = shadows;
         instance.shadowStrength = shadowStrength;
         instance.shadowResolution = shadowResolution;
@@ -120,8 +110,6 @@ public sealed class LightZSerializer : ZSerializer.Internal.ZSerializer {
         instance.cookieSize = cookieSize;
         instance.cookie = cookie;
         instance.renderMode = renderMode;
-        instance.areaSize = areaSize;
-        instance.lightmapBakeType = lightmapBakeType;
         instance.enabled = enabled;
         instance.hideFlags = hideFlags;
         ZSerializerSettings.Instance.unityComponentDataList.FirstOrDefault(data => data.Type == typeof(UnityEngine.Light))?.OnDeserialize?.Invoke(this, instance);
@@ -149,9 +137,6 @@ public sealed class MeshFilterZSerializer : ZSerializer.Internal.ZSerializer {
 public sealed class MeshRendererZSerializer : ZSerializer.Internal.ZSerializer {
     public UnityEngine.Mesh additionalVertexStreams;
     public UnityEngine.Mesh enlightenVertexStream;
-    public System.Single scaleInLightmap;
-    public UnityEngine.ReceiveGI receiveGI;
-    public System.Boolean stitchLightmapSeams;
     public UnityEngine.Bounds bounds;
     public UnityEngine.Bounds localBounds;
     public System.Boolean enabled;
@@ -181,9 +166,6 @@ public sealed class MeshRendererZSerializer : ZSerializer.Internal.ZSerializer {
         var instance = ZSerializer.ZSerialize.idMap[ZSerializer.ZSerialize.CurrentGroupID][ZUID] as UnityEngine.MeshRenderer;
         additionalVertexStreams = instance.additionalVertexStreams;
         enlightenVertexStream = instance.enlightenVertexStream;
-        scaleInLightmap = instance.scaleInLightmap;
-        receiveGI = instance.receiveGI;
-        stitchLightmapSeams = instance.stitchLightmapSeams;
         bounds = instance.bounds;
         localBounds = instance.localBounds;
         enabled = instance.enabled;
@@ -216,9 +198,6 @@ public sealed class MeshRendererZSerializer : ZSerializer.Internal.ZSerializer {
         var instance = (UnityEngine.MeshRenderer)component;
         instance.additionalVertexStreams = additionalVertexStreams;
         instance.enlightenVertexStream = enlightenVertexStream;
-        instance.scaleInLightmap = scaleInLightmap;
-        instance.receiveGI = receiveGI;
-        instance.stitchLightmapSeams = stitchLightmapSeams;
         instance.bounds = bounds;
         instance.localBounds = localBounds;
         instance.enabled = enabled;

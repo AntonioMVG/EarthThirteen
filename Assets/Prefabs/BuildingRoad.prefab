@@ -205,8 +205,8 @@ MonoBehaviour:
   autoSync: 1
   _zuid: 
   _gozuid: 
-  preset: {fileID: 11400000, guid: 0a94a5ac898a0b24ba902d5e803a6833, type: 2}
   car: {fileID: 0}
+  preset: {fileID: 11400000, guid: 0a94a5ac898a0b24ba902d5e803a6833, type: 2}
   isNearRoad: 0
 --- !u!65 &1167451684788565858
 BoxCollider:
