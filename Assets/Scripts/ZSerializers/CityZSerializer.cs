@@ -1,7 +1,6 @@
 [System.Serializable]
 public sealed class CityZSerializer : ZSerializer.Internal.ZSerializer
 {
-    public UnityEngine.GameObject sun;
     public System.Single curDayTime;
     public System.Single dayTime;
     public System.Single multiplier;
@@ -32,14 +31,14 @@ public sealed class CityZSerializer : ZSerializer.Internal.ZSerializer
     public UnityEngine.GameObject pipesContainer;
     public UnityEngine.UI.Button houseBt;
     public UnityEngine.UI.Button factoryBt;
-    public UnityEngine.GameObject endGameInfo;
     public City instance;
+    public UnityEngine.GameObject sun;
+    public UnityEngine.GameObject endGameInfo;
     public System.Int32 groupID;
     public System.Boolean autoSync;
 
     public CityZSerializer(string ZUID, string GOZUID) : base(ZUID, GOZUID)
     {       var instance = ZSerializer.ZSerialize.idMap[ZSerializer.ZSerialize.CurrentGroupID][ZUID];
-         sun = (UnityEngine.GameObject)typeof(City).GetField("sun").GetValue(instance);
          curDayTime = (System.Single)typeof(City).GetField("curDayTime").GetValue(instance);
          dayTime = (System.Single)typeof(City).GetField("dayTime").GetValue(instance);
          multiplier = (System.Single)typeof(City).GetField("multiplier").GetValue(instance);
@@ -70,15 +69,15 @@ public sealed class CityZSerializer : ZSerializer.Internal.ZSerializer
          pipesContainer = (UnityEngine.GameObject)typeof(City).GetField("pipesContainer").GetValue(instance);
          houseBt = (UnityEngine.UI.Button)typeof(City).GetField("houseBt").GetValue(instance);
          factoryBt = (UnityEngine.UI.Button)typeof(City).GetField("factoryBt").GetValue(instance);
-         endGameInfo = (UnityEngine.GameObject)typeof(City).GetField("endGameInfo").GetValue(instance);
          instance = (City)typeof(City).GetField("instance").GetValue(instance);
+         sun = (UnityEngine.GameObject)typeof(City).GetField("sun", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).GetValue(instance);
+         endGameInfo = (UnityEngine.GameObject)typeof(City).GetField("endGameInfo", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).GetValue(instance);
          groupID = (System.Int32)typeof(ZSerializer.PersistentMonoBehaviour).GetField("groupID", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).GetValue(instance);
          autoSync = (System.Boolean)typeof(ZSerializer.PersistentMonoBehaviour).GetField("autoSync", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).GetValue(instance);
     }
 
     public override void RestoreValues(UnityEngine.Component component)
     {
-         typeof(City).GetField("sun").SetValue(component, sun);
          typeof(City).GetField("curDayTime").SetValue(component, curDayTime);
          typeof(City).GetField("dayTime").SetValue(component, dayTime);
          typeof(City).GetField("multiplier").SetValue(component, multiplier);
@@ -109,8 +108,9 @@ public sealed class CityZSerializer : ZSerializer.Internal.ZSerializer
          typeof(City).GetField("pipesContainer").SetValue(component, pipesContainer);
          typeof(City).GetField("houseBt").SetValue(component, houseBt);
          typeof(City).GetField("factoryBt").SetValue(component, factoryBt);
-         typeof(City).GetField("endGameInfo").SetValue(component, endGameInfo);
          typeof(City).GetField("instance").SetValue(component, instance);
+         typeof(City).GetField("sun", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(component, sun);
+         typeof(City).GetField("endGameInfo", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(component, endGameInfo);
          typeof(ZSerializer.PersistentMonoBehaviour).GetField("groupID", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(component, groupID);
          typeof(ZSerializer.PersistentMonoBehaviour).GetField("autoSync", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(component, autoSync);
     }

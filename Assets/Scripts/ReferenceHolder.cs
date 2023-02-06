@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ReferenceHolder : MonoBehaviour
 {
@@ -14,6 +15,16 @@ public class ReferenceHolder : MonoBehaviour
     public TextMeshProUGUI polutionTxt;
     public TextMeshProUGUI hourTxt;
     public TextMeshProUGUI multiplierTxt;
+
+    [Header("HUD Buttons")]
+    public Button houseBt;
+    public Button factoryBt;
+
+    [Header("End Game")]
+    public GameObject endGameInfo;
+
+    [Header("Day")]
+    public GameObject sun;
 
     private void Awake()
     {

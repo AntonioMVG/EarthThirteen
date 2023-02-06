@@ -36,6 +36,8 @@ MonoBehaviour:
     PublicKeyToken=null
   - UnityEngine.MeshCollider, UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
+  - UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
   unityComponentDataList:
   - typeFullName: UnityEngine.AI.NavMeshAgent, UnityEngine.AIModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -149,7 +151,13 @@ MonoBehaviour:
         PublicKeyToken=null
       - ParentTest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       - SerializationTest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - City, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      - Building, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       values:
+      - isOn: 1
+        groupID: 0
+      - isOn: 1
+        groupID: 0
       - isOn: 1
         groupID: 0
       - isOn: 1

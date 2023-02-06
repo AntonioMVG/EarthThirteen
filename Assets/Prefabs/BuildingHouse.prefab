@@ -186,8 +186,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301bd0a92433c6b43bc5632c8667a559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showSettings: 0
+  isOn: 1
+  groupID: 0
+  autoSync: 1
+  _zuid: 
+  _gozuid: 
   preset: {fileID: 11400000, guid: 47e48cbee5185d84482e74e11f4f0224, type: 2}
   car: {fileID: 3354030608821408864, guid: 06acec2e64f84c44c8a5680275114444, type: 3}
+  isNearRoad: 0
 --- !u!65 &6080850641497355286
 BoxCollider:
   m_ObjectHideFlags: 0

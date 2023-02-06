@@ -5,8 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class PlayGame : MonoBehaviour
 {
-    public void StartGame()
+    public static PlayGame instance;
+    public bool newGame;
+
+    private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+
+        DontDestroyOnLoad(this);
+    }
+
+    public void StartGame(bool isNew)
+    {
+        newGame = isNew;
         SceneManager.LoadScene("City");
     }
 }

@@ -48,8 +48,7 @@ public class BuildingPlacement : MonoBehaviour
     public GameObject buildingInfo;
     public GameObject enoughMoneyInfo;
 
-    [Header("AI Scripts")]
-    [SerializeField] private NavMeshSurface surface;
+    public NavMeshSurface surface;
 
     // Called when we press a building UI button
     public void BeginNewBuildingPlacement(BuildingPreset preset)

@@ -8,7 +8,7 @@ using ZSerializer;
 public class City : PersistentMonoBehaviour
 {
     [Header("Day")]
-    public GameObject sun;
+    [SerializeField] private GameObject sun;
     public float curDayTime;
     public float dayTime;
     public float multiplier;
@@ -50,7 +50,7 @@ public class City : PersistentMonoBehaviour
     public Button factoryBt;
 
     [Header("End Game")]
-    public GameObject endGameInfo;
+    [SerializeField] private GameObject endGameInfo;
 
     public static City instance;
 
@@ -69,20 +69,23 @@ public class City : PersistentMonoBehaviour
 
     private void FixedUpdate()
     {
-        if (curPopulation <= 50)
+        if(!IsLoading)
         {
-            houseBt.transform.GetComponent<Button>().interactable = false;
-            factoryBt.transform.GetComponent<Button>().interactable = false;
-        }   
-        else
-        {
-            houseBt.transform.GetComponent<Button>().interactable = true;
-            factoryBt.transform.GetComponent<Button>().interactable = true;
-        }
-            
+            if (curPopulation <= 50)
+            {
+                houseBt.transform.GetComponent<Button>().interactable = false;
+                factoryBt.transform.GetComponent<Button>().interactable = false;
+            }
+            else
+            {
+                houseBt.transform.GetComponent<Button>().interactable = true;
+                factoryBt.transform.GetComponent<Button>().interactable = true;
+            }
 
-        UpdateStatsText();
-        DayCicle();
+
+            UpdateStatsText();
+            DayCicle();
+        }
     }
 
     private void DayCicle()
@@ -289,5 +292,14 @@ public class City : PersistentMonoBehaviour
         polutionTxt = ReferenceHolder.instance.polutionTxt;
         hourTxt = ReferenceHolder.instance.hourTxt;
         multiplierTxt = ReferenceHolder.instance.multiplierTxt;
+
+        houseBt = ReferenceHolder.instance.houseBt;
+        factoryBt = ReferenceHolder.instance.factoryBt;
+
+        sun = ReferenceHolder.instance.sun;
+        endGameInfo = ReferenceHolder.instance.endGameInfo;
+
+        instance = this;
+        GetComponent<BuildingPlacement>().surface.BuildNavMesh();
     }
 }
