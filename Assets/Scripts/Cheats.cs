@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class Cheats : MonoBehaviour
 {
@@ -15,10 +17,7 @@ public class Cheats : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Backslash))
-        {
-            panelCheats.SetActive(!panelCheats.activeSelf);
-            inputCheats.Select();
-        }
+            StartCoroutine(WaitForInputActivation());
     }
 
     public void CheatMode(string cheat)
@@ -57,6 +56,8 @@ public class Cheats : MonoBehaviour
                         {
                             foreach (Transform child in zone)
                             {
+                                Destroy(GameObject.FindGameObjectWithTag("Car"));
+                                Destroy(GameObject.FindGameObjectWithTag("Road"));
                                 Destroy(child.gameObject);
                             }
                             GameObject particles = Instantiate(explosionParticle, City.instance.containers.transform.position, Quaternion.identity);
@@ -74,5 +75,13 @@ public class Cheats : MonoBehaviour
                         break;
             }
         }
+    }
+
+    public IEnumerator WaitForInputActivation()
+    {
+        panelCheats.SetActive(!panelCheats.activeSelf);
+        inputCheats.text = string.Empty;
+        yield return 0;
+        inputCheats.ActivateInputField();
     }
 }

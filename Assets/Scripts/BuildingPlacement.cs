@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.AI;
 
 public class BuildingPlacement : MonoBehaviour
 {
@@ -46,6 +47,9 @@ public class BuildingPlacement : MonoBehaviour
     [Header("Panels Info")]
     public GameObject buildingInfo;
     public GameObject enoughMoneyInfo;
+
+    [Header("AI Scripts")]
+    [SerializeField] private NavMeshSurface surface;
 
     // Called when we press a building UI button
     public void BeginNewBuildingPlacement(BuildingPreset preset)
@@ -266,18 +270,29 @@ public class BuildingPlacement : MonoBehaviour
     {
         GameObject buildingObj = Instantiate(curBuildingPreset.prefab, curIndicatorPos, placementIndicator.transform.rotation);
         
-        City.instance.OnPlaceBulding(buildingObj.GetComponent<Building>());
+        City.instance.OnPlaceBuilding(buildingObj.GetComponent<Building>());
         
+        if(curBuildingPreset.prefab.CompareTag("Road"))
+            surface.UpdateNavMesh(surface.navMeshData);
+
         CancelBuildingPlacement();
     }
 
     // Delete the currently selected building
     private void Bulldoze()
     {
-        Building buildingToDestroy = City.instance.buildings.Find(x => x.transform.position == curIndicatorPos);
+        Building buildingToDestroy;
 
-        if (buildingToDestroy != null)
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 6))
+        {
+            buildingToDestroy = hit.transform.gameObject.GetComponent<Building>();
             City.instance.OnRemoveBuilding(buildingToDestroy);
+
+            if (buildingToDestroy.gameObject.CompareTag("Road"))
+                surface.UpdateNavMesh(surface.navMeshData);
+        }
     }
 
     public void ShowBuildingInfo(Building building)

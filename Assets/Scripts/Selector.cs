@@ -13,7 +13,10 @@ public class Selector : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
     }
 
     // Start is called before the first frame update

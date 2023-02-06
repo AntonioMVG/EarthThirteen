@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using ZSerializer;
 
-public class City : MonoBehaviour
+public class City : PersistentMonoBehaviour
 {
     [Header("Day")]
     public GameObject sun;
@@ -43,6 +45,10 @@ public class City : MonoBehaviour
     public GameObject treesContainer;
     public GameObject pipesContainer;
 
+    [Header("HUD Buttons")]
+    public Button houseBt;
+    public Button factoryBt;
+
     [Header("End Game")]
     public GameObject endGameInfo;
 
@@ -50,7 +56,10 @@ public class City : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
     }
 
     private void Start()
@@ -60,6 +69,18 @@ public class City : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (curPopulation <= 50)
+        {
+            houseBt.transform.GetComponent<Button>().interactable = false;
+            factoryBt.transform.GetComponent<Button>().interactable = false;
+        }   
+        else
+        {
+            houseBt.transform.GetComponent<Button>().interactable = true;
+            factoryBt.transform.GetComponent<Button>().interactable = true;
+        }
+            
+
         UpdateStatsText();
         DayCicle();
     }
@@ -92,9 +113,10 @@ public class City : MonoBehaviour
     }
 
     // Called when we place down a bulding
-    public void OnPlaceBulding(Building building)
+    public void OnPlaceBuilding(Building building)
     {
-        buildings.Add(building);
+        if(!building.CompareTag("Road"))
+            buildings.Add(building);
 
         switch (building.tag)
         {
@@ -165,9 +187,7 @@ public class City : MonoBehaviour
             money -= building.preset.costPerTurn;
 
         if(money < 0)
-        {
             endGameInfo.SetActive(true);
-        }
     }
 
     private void CalculatePopulation()
@@ -256,5 +276,18 @@ public class City : MonoBehaviour
                 }
             }
         }
+    }
+
+    public override void OnPostLoad()
+    {
+        base.OnPostLoad();
+        dayTxt = ReferenceHolder.instance.dayTxt;
+        moneyTxt = ReferenceHolder.instance.moneyTxt;
+        populationTxt = ReferenceHolder.instance.populationTxt;
+        jobsTxt = ReferenceHolder.instance.jobsTxt;
+        foodTxt = ReferenceHolder.instance.foodTxt;
+        polutionTxt = ReferenceHolder.instance.polutionTxt;
+        hourTxt = ReferenceHolder.instance.hourTxt;
+        multiplierTxt = ReferenceHolder.instance.multiplierTxt;
     }
 }

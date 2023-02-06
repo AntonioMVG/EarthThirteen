@@ -5,10 +5,12 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public float moveSpeed;
+
     [Header("Rotation")]
     public float minXRot;
     public float maxXRot;
     public float rotSpeed;
+
     [Header("Zoom")]
     public float minZoom;
     public float maxZoom;

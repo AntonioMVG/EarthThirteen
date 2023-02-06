@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2315980261675668311}
   - component: {fileID: 9128765137519412334}
+  - component: {fileID: 3077432907887897301}
   m_Layer: 6
   m_Name: Point Light
   m_TagString: Light
@@ -94,6 +95,49 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &3077432907887897301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2543351757169076975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 
+  _gozuid: 
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 2315980261675668311}
+    zuid: 
+  - typeFullName: UnityEngine.Light, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 9128765137519412334}
+    zuid: 
 --- !u!1 &5929470680739332414
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +149,7 @@ GameObject:
   - component: {fileID: 5929470680739332415}
   - component: {fileID: -4709163781884474327}
   - component: {fileID: -3164714851461971215}
+  - component: {fileID: -1773386458414253842}
   m_Layer: 6
   m_Name: HouseAMVG
   m_TagString: HouseAMVG
@@ -142,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preset: {fileID: 11400000, guid: b00201783efa4dd4dacba34498ac61f5, type: 2}
+  car: {fileID: 3354030608821408864, guid: 06acec2e64f84c44c8a5680275114444, type: 3}
 --- !u!65 &-3164714851461971215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -155,6 +201,49 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.9994984, y: 0.05, z: 1.9847546}
   m_Center: {x: 0.0048532486, y: 0, z: -0.008939028}
+--- !u!114 &-1773386458414253842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929470680739332414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 
+  _gozuid: 
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 5929470680739332415}
+    zuid: 
+  - typeFullName: UnityEngine.BoxCollider, UnityEngine.PhysicsModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: -3164714851461971215}
+    zuid: 
 --- !u!1001 &5929470681833585395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,8 +305,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afa22864aaf6ecb49aad16244ea01880, type: 3}
+--- !u!23 &5010293664055436919 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: afa22864aaf6ecb49aad16244ea01880, type: 3}
+  m_PrefabInstance: {fileID: 5929470681833585395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6179799976235097368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: afa22864aaf6ecb49aad16244ea01880, type: 3}
+  m_PrefabInstance: {fileID: 5929470681833585395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6811940703460231074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: afa22864aaf6ecb49aad16244ea01880, type: 3}
+  m_PrefabInstance: {fileID: 5929470681833585395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6087029416656980475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6811940703460231074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 
+  _gozuid: 
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 6179799976235097368}
+    zuid: 
+  - typeFullName: UnityEngine.MeshFilter, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 7092277448669844157}
+    zuid: 
+  - typeFullName: UnityEngine.MeshRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 5010293664055436919}
+    zuid: 
+--- !u!33 &7092277448669844157 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: afa22864aaf6ecb49aad16244ea01880, type: 3}
   m_PrefabInstance: {fileID: 5929470681833585395}
   m_PrefabAsset: {fileID: 0}
