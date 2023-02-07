@@ -288,7 +288,7 @@ public class BuildingPlacement : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if(Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 6))
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, 1 << 6 | 1 << 7))
         {
             buildingToDestroy = hit.transform.gameObject.GetComponent<Building>();
             City.instance.OnRemoveBuilding(buildingToDestroy);

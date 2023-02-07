@@ -69,7 +69,7 @@ public class Selector : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, buildingMask))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, buildingMask | 1 << 7))
         {
             return true;
         }
