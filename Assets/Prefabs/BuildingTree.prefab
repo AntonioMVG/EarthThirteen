@@ -338,6 +338,8 @@ MonoBehaviour:
   _zuid: 
   _gozuid: 
   car: {fileID: 0}
+  human: {fileID: 0}
+  humanCount: 0
   preset: {fileID: 11400000, guid: e27453bf24f7ed047b0f02a07226eea5, type: 2}
   isNearRoad: 0
 --- !u!65 &5457997790468195047

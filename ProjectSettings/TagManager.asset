@@ -14,6 +14,7 @@ TagManager:
   - FactoryAMVG
   - Light
   - Car
+  - Human
   layers:
   - Default
   - TransparentFX

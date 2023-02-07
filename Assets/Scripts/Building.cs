@@ -8,14 +8,18 @@ using ZSerializer;
 public class Building : PersistentMonoBehaviour
 {
     [SerializeField] private GameObject car;
+    [SerializeField] private GameObject human;
+    [SerializeField] private int humanCount;
 
     public BuildingPreset preset;
     public bool isNearRoad = false;
 
     private void Start()
     {
-       if(car != null) 
+        if(car != null)
             StartCoroutine(SpawnCar());
+        if(human != null)
+            StartCoroutine(SpawnHuman());
     }
 
     private void FixedUpdate()
@@ -60,6 +64,23 @@ public class Building : PersistentMonoBehaviour
                 buildings.Remove(this);
                 Vector3 position = buildings[Mathf.FloorToInt(Random.Range(0f, (int)buildings.Count))].transform.position;
                 Instantiate(car, transform.position, Quaternion.identity).GetComponent<NavMeshAgent>().SetDestination(position);
+            }
+        }
+    }
+
+    private IEnumerator SpawnHuman()
+    {
+        while (true && humanCount <= City.instance.maxPopulation)
+        {
+            yield return new WaitForSeconds(Random.Range(3f, 6f));
+            if(isNearRoad)
+            {
+                List<Building> buildings = new List<Building>();
+                buildings.AddRange(City.instance.buildings);
+                buildings.Remove(this);
+                Vector3 position = buildings[Mathf.FloorToInt(Random.Range(0f, (int)buildings.Count))].transform.position;
+                Instantiate(human, transform.position, Quaternion.identity).GetComponent<NavMeshAgent>().SetDestination(position);
+                humanCount++;
             }
         }
     }

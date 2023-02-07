@@ -49,6 +49,7 @@ public class BuildingPlacement : MonoBehaviour
     public GameObject enoughMoneyInfo;
 
     public NavMeshSurface surface;
+    public NavMeshSurface surfaceHuman;
 
     // Called when we press a building UI button
     public void BeginNewBuildingPlacement(BuildingPreset preset)
@@ -273,6 +274,9 @@ public class BuildingPlacement : MonoBehaviour
         
         if(curBuildingPreset.prefab.CompareTag("Road"))
             surface.UpdateNavMesh(surface.navMeshData);
+
+        if(curBuildingPreset.prefab.CompareTag("House") || curBuildingPreset.prefab.CompareTag("HouseAMVG"))
+            surfaceHuman.UpdateNavMesh(surfaceHuman.navMeshData);
 
         CancelBuildingPlacement();
     }
