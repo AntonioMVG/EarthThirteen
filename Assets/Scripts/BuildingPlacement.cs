@@ -238,10 +238,38 @@ public class BuildingPlacement : MonoBehaviour
                 bulldozerIndicator.transform.position = curIndicatorPos;
         }
 
+        if(Input.GetMouseButtonUp(0))
+        {
+            GetComponent<RoadPlacer>().StopPlacing();
+            if (curBuildingPreset.prefab.CompareTag("Road"))
+                surface.UpdateNavMesh(surface.navMeshData);
+        }
+
         // Called when we press left mouse button
         Vector3 dummyPos = new Vector3(0, -99, 9);
-        if (Input.GetMouseButtonDown(0) && currentlyPlacing)
+        if ((currentlyPlacing || currentlyBulldozering) && curBuildingPreset.prefab.name == "BuildingRoad")
         {
+            if(Input.GetMouseButtonDown(0) && currentlyPlacing)
+            {
+                GetComponent<RoadPlacer>().TryPlaceRoad();
+            } 
+
+            if(Input.GetMouseButton(0) && currentlyPlacing)
+            {
+                GetComponent<RoadPlacer>().StartPlacing();
+            } else if (Input.GetMouseButtonUp(0) && currentlyPlacing)
+            {
+                GetComponent<RoadPlacer>().StopPlacing();
+            }
+
+            if(Input.GetMouseButtonDown(0) && currentlyBulldozering)
+            {
+                GetComponent<RoadPlacer>().DemolishRoad();
+            }
+        }
+        else if (Input.GetMouseButtonDown(0) && currentlyPlacing)
+        {
+            
             // If pressing the HUD when have a building to place, prevents being sent to the Dummy position
             if (placementIndicator.transform.position != dummyPos && !Selector.instance.IsOccupied())
             {
