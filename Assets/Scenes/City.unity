@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.05865823, g: 0.08953112, b: 0.16224709, a: 1}
+  m_IndirectSpecularColor: {r: 0.09711077, g: 0.14729065, b: 0.26272744, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4031,7 +4031,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: 3d80f39ab88b2ff45b9b8625418fc3c1
+  _zuid: 11599a0dcb630bf4394c30ac6f224c60
   _gozuid: f9863096c267bda4fa1ff44743fa772a
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -6564,7 +6564,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: 1b89c335f80bb2a4cb99f8ce0a6ef2f3
+  _zuid: 69be9eae293720c4e835fdbe6b2f02f7
   _gozuid: b210243535664314f980c01705270310
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -7551,7 +7551,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: fbf479780c7f17742b3ac653ea9f699e
+  _zuid: b5037ad1897bafa4bb975a744314c524
   _gozuid: 8c45b47fd35bf3a46a285453d1e0234e
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -9569,7 +9569,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: 15de43e7fa7096644ab4af8073ee0117
+  _zuid: f9e73379bfc75d24f8c45aeeb9566188
   _gozuid: 49c895079ca25bb48aaa363b9bbc9021
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -17043,7 +17043,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: 400b169909581394190e8cc4e7bd6372
+  _zuid: 3b258082517fad74e8aed4ac673e04b7
   _gozuid: 0aa9dda59cadcb445be72309fd55fb1b
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -17993,7 +17993,7 @@ MonoBehaviour:
   isOn: 1
   groupID: 0
   autoSync: 1
-  _zuid: 1655347590004244ca26ac01589202b6
+  _zuid: 0de3fbb9373d9fe4eb71e267317b517e
   _gozuid: 12e8b5b92f319324c8f898c16db28ec6
   sun: {fileID: 705507993}
   curDayTime: 0
@@ -19468,7 +19468,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: bbfc9643b58430b46be2e925adb17c3b
+  _zuid: 46b810244a5129043af762ac859b0e12
   _gozuid: 29b74212a68117f4a90e36963669327c
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -19604,7 +19604,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: a65226071e4bed04f99dbfce490095b2
+  _zuid: 85d65da3218009c41a63a003a176062d
   _gozuid: 373b45ffa2de08d47913f7fd091af331
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
