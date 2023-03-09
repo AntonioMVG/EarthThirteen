@@ -30,21 +30,25 @@ public class Cheats : MonoBehaviour
                     City.instance.money += 100000;
                     inputCheats.text = string.Empty;
                     panelCheats.SetActive(false);
+                    City.instance.UpdateStatsText();
                     break;
                 case "goldman":
                     City.instance.money += 5000;
                     inputCheats.text = string.Empty;
                     panelCheats.SetActive(false);
+                    City.instance.UpdateStatsText();
                     break;
                 case "pepperonipizza":
                     City.instance.curFood += 100;
                     inputCheats.text = string.Empty;
                     panelCheats.SetActive(false);
+                    City.instance.UpdateStatsText();
                     break;
                 case "nicolatesla":
                     City.instance.polution += 100;
                     inputCheats.text = string.Empty;
                     panelCheats.SetActive(false);
+                    City.instance.UpdateStatsText();
                     break;
                 // TODO: More cheats
                 // Truco para quemar los arboles y fastidiar la polucion
@@ -63,6 +67,7 @@ public class Cheats : MonoBehaviour
                             GameObject particles = Instantiate(explosionParticle, City.instance.containers.transform.position, Quaternion.identity);
                             Destroy(particles, 0.2f);
                         }
+                    
                         City.instance.buildings.Clear();
                         City.instance.curPopulation = 0;
                         City.instance.maxPopulation = 0;
@@ -72,6 +77,7 @@ public class Cheats : MonoBehaviour
                         City.instance.polution = 0;
                         inputCheats.text = string.Empty;
                         panelCheats.SetActive(false);
+                        City.instance.UpdateStatsText();
                         break;
             }
         }

@@ -226,7 +226,8 @@ public class City : PersistentMonoBehaviour
             polution += building.preset.polution;
     }
 
-    private void UpdateStatsText()
+    public void UpdateStatsText()
+    //private void UpdateStatsText()
     {
         dayTxt.text = day.ToString();
         moneyTxt.text = money.ToString();

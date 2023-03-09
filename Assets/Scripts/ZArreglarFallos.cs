@@ -7,3 +7,5 @@
 // Cuando salen personas de los edificios, salen más de la población máxima actual
 
 // Controlar el máximo de vehículos que salen, con respecto a la población actual
+
+// Se puede volver a construir fuera de zona y sobre las carreteras
