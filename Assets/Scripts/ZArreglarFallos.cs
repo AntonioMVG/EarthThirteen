@@ -8,6 +8,6 @@
 
 // Se puede volver a construir fuera de zona y sobre las carreteras
 
-// Controlar el maximo de coches y humanos que aparecen en juego (está limitado, pero dejan de salir)
+// Controlar el maximo de coches y humanos que aparecen en juego
 
 // Para ampliar los terrenos, cambiar de los "Ground" el Layer a Default en vez de Building

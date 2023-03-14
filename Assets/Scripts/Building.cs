@@ -56,7 +56,7 @@ public class Building : PersistentMonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(Random.Range(3f, 6f));
-            if(isNearRoad && (City.instance.carCount <= (City.instance.maxPopulation / 2)))
+            if(isNearRoad)
             {
                 List<Building> buildings = new List<Building>();
                 buildings.AddRange(City.instance.buildings);
@@ -79,7 +79,7 @@ public class Building : PersistentMonoBehaviour
             yield return new WaitForSeconds(Random.Range(3f, 6f));
 
             // Instantiate humans according to the maxPopulation
-            if(isNearRoad && (City.instance.humanCount <= City.instance.maxPopulation))
+            if(isNearRoad)
             {
                 List<Building> buildings = new List<Building>();
                 buildings.AddRange(City.instance.buildings);
