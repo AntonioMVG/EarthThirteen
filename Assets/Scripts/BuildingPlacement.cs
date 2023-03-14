@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -257,7 +256,8 @@ public class BuildingPlacement : MonoBehaviour
             if(Input.GetMouseButton(0) && currentlyPlacing)
             {
                 GetComponent<RoadPlacer>().StartPlacing();
-            } else if (Input.GetMouseButtonUp(0) && currentlyPlacing)
+            }
+            else if (Input.GetMouseButtonUp(0) && currentlyPlacing)
             {
                 GetComponent<RoadPlacer>().StopPlacing();
             }
@@ -269,7 +269,6 @@ public class BuildingPlacement : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(0) && currentlyPlacing)
         {
-            
             // If pressing the HUD when have a building to place, prevents being sent to the Dummy position
             if (placementIndicator.transform.position != dummyPos && !Selector.instance.IsOccupied())
             {

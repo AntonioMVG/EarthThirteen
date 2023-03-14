@@ -31,6 +31,8 @@ public sealed class CityZSerializer : ZSerializer.Internal.ZSerializer
     public UnityEngine.GameObject pipesContainer;
     public UnityEngine.UI.Button houseBt;
     public UnityEngine.UI.Button factoryBt;
+    public System.Int32 carCount;
+    public System.Int32 humanCount;
     public City instance;
     public UnityEngine.GameObject sun;
     public UnityEngine.GameObject endGameInfo;
@@ -69,6 +71,8 @@ public sealed class CityZSerializer : ZSerializer.Internal.ZSerializer
          pipesContainer = (UnityEngine.GameObject)typeof(City).GetField("pipesContainer").GetValue(instance);
          houseBt = (UnityEngine.UI.Button)typeof(City).GetField("houseBt").GetValue(instance);
          factoryBt = (UnityEngine.UI.Button)typeof(City).GetField("factoryBt").GetValue(instance);
+         carCount = (System.Int32)typeof(City).GetField("carCount").GetValue(instance);
+         humanCount = (System.Int32)typeof(City).GetField("humanCount").GetValue(instance);
          instance = (City)typeof(City).GetField("instance").GetValue(instance);
          sun = (UnityEngine.GameObject)typeof(City).GetField("sun", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).GetValue(instance);
          endGameInfo = (UnityEngine.GameObject)typeof(City).GetField("endGameInfo", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).GetValue(instance);
@@ -108,6 +112,8 @@ public sealed class CityZSerializer : ZSerializer.Internal.ZSerializer
          typeof(City).GetField("pipesContainer").SetValue(component, pipesContainer);
          typeof(City).GetField("houseBt").SetValue(component, houseBt);
          typeof(City).GetField("factoryBt").SetValue(component, factoryBt);
+         typeof(City).GetField("carCount").SetValue(component, carCount);
+         typeof(City).GetField("humanCount").SetValue(component, humanCount);
          typeof(City).GetField("instance").SetValue(component, instance);
          typeof(City).GetField("sun", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(component, sun);
          typeof(City).GetField("endGameInfo", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(component, endGameInfo);

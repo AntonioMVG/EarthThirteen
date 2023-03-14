@@ -52,6 +52,10 @@ public class City : PersistentMonoBehaviour
     [Header("End Game")]
     [SerializeField] private GameObject endGameInfo;
 
+    [Header("Counters")]
+    public int carCount;
+    public int humanCount;
+    
     public static City instance;
 
     private void Awake()
@@ -81,7 +85,6 @@ public class City : PersistentMonoBehaviour
                 houseBt.transform.GetComponent<Button>().interactable = true;
                 factoryBt.transform.GetComponent<Button>().interactable = true;
             }
-
 
             UpdateStatsText();
             DayCicle();
@@ -227,7 +230,6 @@ public class City : PersistentMonoBehaviour
     }
 
     public void UpdateStatsText()
-    //private void UpdateStatsText()
     {
         dayTxt.text = day.ToString();
         moneyTxt.text = money.ToString();

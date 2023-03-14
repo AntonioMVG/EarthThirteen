@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.09711077, g: 0.14729065, b: 0.26272744, a: 1}
+  m_IndirectSpecularColor: {r: 0.10571456, g: 0.16148835, b: 0.28846985, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -877,7 +877,7 @@ GameObject:
   - component: {fileID: 130792896}
   - component: {fileID: 130792895}
   - component: {fileID: 130792899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1898,7 +1898,7 @@ GameObject:
   - component: {fileID: 206846925}
   - component: {fileID: 206846924}
   - component: {fileID: 206846928}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9895,7 +9895,7 @@ GameObject:
   - component: {fileID: 1085122233}
   - component: {fileID: 1085122232}
   - component: {fileID: 1085122236}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12675,7 +12675,7 @@ GameObject:
   - component: {fileID: 1397067317}
   - component: {fileID: 1397067316}
   - component: {fileID: 1397067320}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12923,7 +12923,7 @@ GameObject:
   - component: {fileID: 1405195888}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13356,7 +13356,7 @@ GameObject:
   - component: {fileID: 1429538509}
   - component: {fileID: 1429538508}
   - component: {fileID: 1429538512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13535,7 +13535,7 @@ GameObject:
   - component: {fileID: 1445481215}
   - component: {fileID: 1445481214}
   - component: {fileID: 1445481218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15838,7 +15838,7 @@ GameObject:
   - component: {fileID: 1734121546}
   - component: {fileID: 1734121545}
   - component: {fileID: 1734121549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17993,7 +17993,7 @@ MonoBehaviour:
   isOn: 1
   groupID: 0
   autoSync: 1
-  _zuid: 0de3fbb9373d9fe4eb71e267317b517e
+  _zuid: 4e767b407d4f8e2419ee4c97f2589bb1
   _gozuid: 12e8b5b92f319324c8f898c16db28ec6
   sun: {fileID: 705507993}
   curDayTime: 0
@@ -18027,6 +18027,8 @@ MonoBehaviour:
   houseBt: {fileID: 1117580566}
   factoryBt: {fileID: 802051094}
   endGameInfo: {fileID: 1508157289}
+  carCount: 0
+  humanCount: 0
 --- !u!114 &1983168322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18440,7 +18442,7 @@ GameObject:
   - component: {fileID: 2013306724}
   - component: {fileID: 2013306723}
   - component: {fileID: 2013306727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20198,7 +20200,6 @@ MonoBehaviour:
   _gozuid: b1682a4a7f16d1741a8a23a41d6bf208
   car: {fileID: 0}
   human: {fileID: 0}
-  humanCount: 0
   preset: {fileID: 11400000, guid: e27453bf24f7ed047b0f02a07226eea5, type: 2}
   isNearRoad: 0
 --- !u!1 &2543351757310092596
@@ -20773,7 +20774,6 @@ MonoBehaviour:
   _gozuid: dc88f31499dd01043822a06ce857cc2c
   car: {fileID: 0}
   human: {fileID: 0}
-  humanCount: 0
   preset: {fileID: 11400000, guid: 7f8d540539afcdd43a462fd15860588b, type: 2}
   isNearRoad: 0
 --- !u!114 &4696980285811633602
@@ -20796,7 +20796,6 @@ MonoBehaviour:
   _gozuid: a17013337e238e84187218cc502e6ff2
   car: {fileID: 0}
   human: {fileID: 0}
-  humanCount: 0
   preset: {fileID: 11400000, guid: 0a94a5ac898a0b24ba902d5e803a6833, type: 2}
   isNearRoad: 0
 --- !u!1 &4736740220679647226
@@ -20996,7 +20995,6 @@ MonoBehaviour:
   _gozuid: 184f36a6549fa964294be33878746dce
   car: {fileID: 3354030608821408864, guid: 06acec2e64f84c44c8a5680275114444, type: 3}
   human: {fileID: 0}
-  humanCount: 0
   preset: {fileID: 11400000, guid: 47e48cbee5185d84482e74e11f4f0224, type: 2}
   isNearRoad: 0
 --- !u!1 &5583656443725928472
@@ -21266,7 +21264,6 @@ MonoBehaviour:
   _gozuid: e0a977181f5f5bb409ce98aed35b6b18
   car: {fileID: 0}
   human: {fileID: 0}
-  humanCount: 0
   preset: {fileID: 11400000, guid: a8a4029d59ccc90448b381b6494fa9b4, type: 2}
   isNearRoad: 0
 --- !u!108 &7991444059378062109
@@ -21444,7 +21441,6 @@ MonoBehaviour:
   _gozuid: f086f97da608626478686f3c25f571b4
   car: {fileID: 3354030608821408864, guid: 06acec2e64f84c44c8a5680275114444, type: 3}
   human: {fileID: 0}
-  humanCount: 0
   preset: {fileID: 11400000, guid: 099f8e613d8cb5445844e703b1ec9ad9, type: 2}
   isNearRoad: 0
 --- !u!114 &8467232403657754741
@@ -21467,7 +21463,6 @@ MonoBehaviour:
   _gozuid: 5d610cd63f477cc4da46563e5d2795e5
   car: {fileID: 3354030608821408864, guid: 06acec2e64f84c44c8a5680275114444, type: 3}
   human: {fileID: 0}
-  humanCount: 0
   preset: {fileID: 11400000, guid: b03929b64ffcfd8459e31cfaff26e369, type: 2}
   isNearRoad: 0
 --- !u!64 &8814679658478551992
@@ -21504,7 +21499,6 @@ MonoBehaviour:
   _gozuid: ce09d60b657cbbc46a5a8f9c0227565a
   car: {fileID: 3354030608821408864, guid: 06acec2e64f84c44c8a5680275114444, type: 3}
   human: {fileID: 0}
-  humanCount: 0
   preset: {fileID: 11400000, guid: 0b1164f58f52b424a8a9edeada586bbf, type: 2}
   isNearRoad: 0
 --- !u!33 &9124835448849471030

@@ -22,7 +22,6 @@ public class WaypointManager : MonoBehaviour
             waypoints.Add(road);
             Instantiate(waypointMarker, road, Quaternion.identity);
         }
-           
     }
 
     public void RemoveWaypoint(Vector3 road)
@@ -34,7 +33,6 @@ public class WaypointManager : MonoBehaviour
             if(cols.Count > 0)
                 Destroy(cols[0].gameObject);
         }
-            
     }
 
     private float GetDistance(Vector3 nodeA, Vector3 nodeB)

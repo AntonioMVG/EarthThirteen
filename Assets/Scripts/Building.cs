@@ -9,7 +9,6 @@ public class Building : PersistentMonoBehaviour
 {
     [SerializeField] private GameObject car;
     [SerializeField] private GameObject human;
-    [SerializeField] private int humanCount;
 
     public BuildingPreset preset;
     public bool isNearRoad = false;
@@ -57,16 +56,17 @@ public class Building : PersistentMonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(Random.Range(3f, 6f));
-            if(isNearRoad)
+            if(isNearRoad && (City.instance.carCount <= (City.instance.maxPopulation / 2)))
             {
                 List<Building> buildings = new List<Building>();
                 buildings.AddRange(City.instance.buildings);
 
-                if(buildings.Count > 1)
+                if (buildings.Count > 1)
                 {
                     buildings.Remove(this);
                     Vector3 position = buildings[Mathf.FloorToInt(Random.Range(0f, (int)buildings.Count))].transform.position;
                     Instantiate(car, transform.position, Quaternion.identity).GetComponent<NavMeshAgent>().SetDestination(position);
+                    City.instance.carCount++;
                 }
             }
         }
@@ -74,10 +74,12 @@ public class Building : PersistentMonoBehaviour
 
     private IEnumerator SpawnHuman()
     {
-        while (true && humanCount <= City.instance.maxPopulation)
+        while (true)
         {
             yield return new WaitForSeconds(Random.Range(3f, 6f));
-            if(isNearRoad)
+
+            // Instantiate humans according to the maxPopulation
+            if(isNearRoad && (City.instance.humanCount <= City.instance.maxPopulation))
             {
                 List<Building> buildings = new List<Building>();
                 buildings.AddRange(City.instance.buildings);
@@ -87,7 +89,7 @@ public class Building : PersistentMonoBehaviour
                     buildings.Remove(this);
                     Vector3 position = buildings[Mathf.FloorToInt(Random.Range(0f, (int)buildings.Count))].transform.position;
                     Instantiate(human, transform.position, Quaternion.identity).GetComponent<NavMeshAgent>().SetDestination(position);
-                    humanCount++;
+                    City.instance.humanCount++;
                 }
             }
         }
