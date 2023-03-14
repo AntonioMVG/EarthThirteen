@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.10571456, g: 0.16148835, b: 0.28846985, a: 1}
+  m_IndirectSpecularColor: {r: 0.046659943, g: 0.069162734, b: 0.124111146, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17043,14 +17043,14 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: 3b258082517fad74e8aed4ac673e04b7
-  _gozuid: 0aa9dda59cadcb445be72309fd55fb1b
+  _zuid: 1a4c426686ce5d747bad6a042464e1c5
+  _gozuid: 5eb9a5b3295541949bb9489cd117d9cc
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     persistenceType: 0
     component: {fileID: 1847540275}
-    zuid: 7f7abb69f8bb1e1419d635263306286f
+    zuid: 7376818b06261f84596944129a78f21e
 --- !u!1 &1854682305
 GameObject:
   m_ObjectHideFlags: 0

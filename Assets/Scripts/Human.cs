@@ -14,8 +14,9 @@ public class Human : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (agent.remainingDistance < .1f)
+        if (agent.remainingDistance < 0.1f)
         {
+            City.instance.humanCount--;
             Destroy(this.gameObject);
         }
     }

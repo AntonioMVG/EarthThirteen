@@ -8,6 +8,6 @@
 
 // Se puede volver a construir fuera de zona y sobre las carreteras
 
-// Controlar el maximo de coches y humanos que aparecen en juego
+// Cuando se ejecuta el truco "endofdays", no se destruyen coches y humanos
 
 // Para ampliar los terrenos, cambiar de los "Ground" el Layer a Default en vez de Building
