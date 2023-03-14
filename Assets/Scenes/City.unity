@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.046659943, g: 0.069162734, b: 0.124111146, a: 1}
+  m_IndirectSpecularColor: {r: 0.09425767, g: 0.14255278, b: 0.2540681, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18056,6 +18056,7 @@ MonoBehaviour:
   panelCheats: {fileID: 1548619475}
   inputCheats: {fileID: 1021850881}
   explosionParticle: {fileID: 7465592586558740068, guid: 09cb2b057aa5e4940a93f18c4a451e02, type: 3}
+  dustParticle: {fileID: 1750792418288317480, guid: 2c4e1738ddff1eb469a14bf0943616ff, type: 3}
 --- !u!114 &1983168325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19606,14 +19607,14 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: 85d65da3218009c41a63a003a176062d
-  _gozuid: 373b45ffa2de08d47913f7fd091af331
+  _zuid: 17007ffa1dc81bc4898f1f4ce5e01b21
+  _gozuid: 826c2a03f0c0983409f9e92ad05afc27
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     persistenceType: 0
     component: {fileID: 2139801801}
-    zuid: 61604da25bdbc6a44aab15635c516830
+    zuid: a85f8451acbb57e408b0822f1877b518
 --- !u!1001 &2142669909
 PrefabInstance:
   m_ObjectHideFlags: 0

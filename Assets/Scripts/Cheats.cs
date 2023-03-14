@@ -50,35 +50,35 @@ public class Cheats : MonoBehaviour
                     panelCheats.SetActive(false);
                     City.instance.UpdateStatsText();
                     break;
+                case "endofdays":
+                    foreach (Transform zone in City.instance.containers.transform)
+                    {
+                        foreach (Transform child in zone)
+                        {
+                            Destroy(GameObject.FindGameObjectWithTag("Car"));
+                            Destroy(GameObject.FindGameObjectWithTag("Road"));
+                            Destroy(child.gameObject);
+                        }
+                        GameObject particles = Instantiate(explosionParticle, City.instance.containers.transform.position, Quaternion.identity);
+                        Destroy(particles, 0.2f);
+                    }
+                    
+                    City.instance.buildings.Clear();
+                    City.instance.curPopulation = 0;
+                    City.instance.maxPopulation = 0;
+                    City.instance.curJobs = 0;
+                    City.instance.maxJobs = 0;
+                    City.instance.curFood = 0;
+                    City.instance.polution = 0;
+                    inputCheats.text = string.Empty;
+                    panelCheats.SetActive(false);
+                    City.instance.UpdateStatsText();
+                    break;
                 // TODO: More cheats
                 // Truco para quemar los arboles y fastidiar la polucion
                 // Truco para hacer llover
                 // Truco para hacer caer un meteorito y destruir lo construido segun la zona
                 // Truco para convertir a parte de la población en zombie
-                    case "endofdays":
-                        foreach (Transform zone in City.instance.containers.transform)
-                        {
-                            foreach (Transform child in zone)
-                            {
-                                Destroy(GameObject.FindGameObjectWithTag("Car"));
-                                Destroy(GameObject.FindGameObjectWithTag("Road"));
-                                Destroy(child.gameObject);
-                            }
-                            GameObject particles = Instantiate(explosionParticle, City.instance.containers.transform.position, Quaternion.identity);
-                            Destroy(particles, 0.2f);
-                        }
-                    
-                        City.instance.buildings.Clear();
-                        City.instance.curPopulation = 0;
-                        City.instance.maxPopulation = 0;
-                        City.instance.curJobs = 0;
-                        City.instance.maxJobs = 0;
-                        City.instance.curFood = 0;
-                        City.instance.polution = 0;
-                        inputCheats.text = string.Empty;
-                        panelCheats.SetActive(false);
-                        City.instance.UpdateStatsText();
-                        break;
             }
         }
     }
